@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DA3C97C166C28B200F1AA3C /* ChordReferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */; };
+		4DA3C980166C2BB200F1AA3C /* ChordQuizController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3C97F166C2BB200F1AA3C /* ChordQuizController.m */; };
+		4DB5A0771671FFC1004276C0 /* Chords.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5A0761671FFC1004276C0 /* Chords.m */; };
+		4DB5A07A16720201004276C0 /* BackEndDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5A07916720201004276C0 /* BackEndDictionary.m */; };
 		4DF961851665502E00FC0762 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961841665502E00FC0762 /* UIKit.framework */; };
 		4DF961871665502E00FC0762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961861665502E00FC0762 /* Foundation.framework */; };
 		4DF961891665502E00FC0762 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961881665502E00FC0762 /* CoreGraphics.framework */; };
@@ -37,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DA3C97A166C28B200F1AA3C /* ChordReferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordReferenceController.h; sourceTree = "<group>"; };
+		4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordReferenceController.m; sourceTree = "<group>"; };
+		4DA3C97E166C2BB200F1AA3C /* ChordQuizController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordQuizController.h; sourceTree = "<group>"; };
+		4DA3C97F166C2BB200F1AA3C /* ChordQuizController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordQuizController.m; sourceTree = "<group>"; };
+		4DB5A0751671FFC1004276C0 /* Chords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chords.h; sourceTree = "<group>"; };
+		4DB5A0761671FFC1004276C0 /* Chords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chords.m; sourceTree = "<group>"; };
+		4DB5A07816720201004276C0 /* BackEndDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackEndDictionary.h; sourceTree = "<group>"; };
+		4DB5A07916720201004276C0 /* BackEndDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackEndDictionary.m; sourceTree = "<group>"; };
 		4DF961801665502E00FC0762 /* MusicTheoryTutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTheoryTutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF961841665502E00FC0762 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DF961861665502E00FC0762 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +140,14 @@
 				4DF961A21665502E00FC0762 /* DetailViewController.h */,
 				4DF961A31665502E00FC0762 /* DetailViewController.m */,
 				4DF9618B1665502E00FC0762 /* Supporting Files */,
+				4DA3C97A166C28B200F1AA3C /* ChordReferenceController.h */,
+				4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */,
+				4DA3C97E166C2BB200F1AA3C /* ChordQuizController.h */,
+				4DA3C97F166C2BB200F1AA3C /* ChordQuizController.m */,
+				4DB5A0751671FFC1004276C0 /* Chords.h */,
+				4DB5A0761671FFC1004276C0 /* Chords.m */,
+				4DB5A07816720201004276C0 /* BackEndDictionary.h */,
+				4DB5A07916720201004276C0 /* BackEndDictionary.m */,
 			);
 			path = MusicTheoryTutor;
 			sourceTree = "<group>";
@@ -279,6 +299,10 @@
 				4DF961951665502E00FC0762 /* AppDelegate.m in Sources */,
 				4DF961A11665502E00FC0762 /* MasterViewController.m in Sources */,
 				4DF961A41665502E00FC0762 /* DetailViewController.m in Sources */,
+				4DA3C97C166C28B200F1AA3C /* ChordReferenceController.m in Sources */,
+				4DA3C980166C2BB200F1AA3C /* ChordQuizController.m in Sources */,
+				4DB5A0771671FFC1004276C0 /* Chords.m in Sources */,
+				4DB5A07A16720201004276C0 /* BackEndDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +407,14 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "MusicTheoryTutor/MusicTheoryTutor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"${HOME}/Desktop/j2objc/lib",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,7 +425,14 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "MusicTheoryTutor/MusicTheoryTutor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"${HOME}/Desktop/j2objc/lib",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +491,7 @@
 				4DF961BE1665502E00FC0762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DF961BF1665502E00FC0762 /* Build configuration list for PBXNativeTarget "MusicTheoryTutorTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +500,7 @@
 				4DF961C11665502E00FC0762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
