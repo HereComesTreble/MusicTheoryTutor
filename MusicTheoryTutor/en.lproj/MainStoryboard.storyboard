@@ -111,14 +111,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="U9h-mz-ViP">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="NDG-I8-3HN"/>
-                                    <constraint firstAttribute="height" constant="200" id="NRB-XT-Siz"/>
-                                </constraints>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLf-YF-ec1">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLf-YF-ec1">
+                                <accessibility key="accessibilityConfiguration" label="A"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="PQK-X3-dRp"/>
                                 </constraints>
@@ -130,8 +124,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="a0e-rb-oob"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2N-fc-OXB">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2N-fc-OXB">
+                                <accessibility key="accessibilityConfiguration" label="B"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="gMv-GC-1kd"/>
                                 </constraints>
@@ -143,11 +141,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="KoH-6A-fMV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJT-Pu-I1k">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="anQ-eW-9VH"/>
-                                </constraints>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJT-Pu-I1k">
+                                <accessibility key="accessibilityConfiguration" label="C"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="C">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -156,11 +155,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="flr-wf-UOc"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yub-ea-kgA">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="sIZ-ke-Zor"/>
-                                </constraints>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yub-ea-kgA">
+                                <accessibility key="accessibilityConfiguration" label="D"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="D">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -169,11 +169,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="R2r-bN-V7R"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IC-Hf-scH">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="gP9-ep-PMO"/>
-                                </constraints>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IC-Hf-scH">
+                                <accessibility key="accessibilityConfiguration" label="E"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="E">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,11 +183,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="6nk-04-5BX"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-3I-Uss">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="TQe-HN-Oeh"/>
-                                </constraints>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-3I-Uss">
+                                <accessibility key="accessibilityConfiguration" label="F"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="F">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,8 +197,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="eOW-GT-9zU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-OK-oOp">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-OK-oOp">
+                                <accessibility key="accessibilityConfiguration" label="G"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="G">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -205,8 +211,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="LcA-AP-aGr"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-uF-4RG">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-uF-4RG">
+                                <accessibility key="accessibilityConfiguration" label="flat"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="♭">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -215,8 +225,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="S34-ce-Dk0"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fy-St-1lF">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fy-St-1lF">
+                                <accessibility key="accessibilityConfiguration" label="sharp"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="♯">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -225,8 +239,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="F1Y-nZ-xOa"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DL-Y4-AEX">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DL-Y4-AEX">
+                                <accessibility key="accessibilityConfiguration" label="submit"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,6 +253,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="thE-uR-a5u"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter A Chord:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHW-od-HmJ">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -259,6 +280,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zxF-sT-KTE">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="0tn-vU-Z3l"/>
+                                    <constraint firstAttribute="height" constant="200" id="7GS-Rg-psS"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -267,41 +295,45 @@
                             <constraint firstItem="R2N-fc-OXB" firstAttribute="baseline" secondItem="DLf-YF-ec1" secondAttribute="baseline" type="default" id="7sw-zG-3lC"/>
                             <constraint firstItem="iHW-od-HmJ" firstAttribute="top" secondItem="CBV-Ta-3n0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8Bt-UQ-knh"/>
                             <constraint firstItem="iHW-od-HmJ" firstAttribute="centerX" secondItem="R2N-fc-OXB" secondAttribute="centerX" type="default" id="9in-li-GC1"/>
-                            <constraint firstItem="5Fy-St-1lF" firstAttribute="trailing" secondItem="O4o-3I-Uss" secondAttribute="trailing" type="default" id="A58-9u-IzX"/>
+                            <constraint firstItem="DLf-YF-ec1" firstAttribute="leading" secondItem="Yub-ea-kgA" secondAttribute="leading" type="default" id="A5F-eA-Ad1"/>
                             <constraint firstItem="EGe-uF-4RG" firstAttribute="centerX" secondItem="8DL-Y4-AEX" secondAttribute="centerX" type="default" id="Eri-et-zhD"/>
-                            <constraint firstItem="U9h-mz-ViP" firstAttribute="leading" secondItem="QJT-Pu-I1k" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Hrs-o0-kiP"/>
                             <constraint firstItem="8DL-Y4-AEX" firstAttribute="leading" secondItem="DNM-OK-oOp" secondAttribute="leading" type="default" id="IWE-F0-b9U"/>
+                            <constraint firstItem="zxF-sT-KTE" firstAttribute="trailing" secondItem="CBV-Ta-3n0" secondAttribute="trailing" type="default" id="JJ6-ol-xmu"/>
                             <constraint firstItem="9Yo-7r-ZCF" firstAttribute="leading" secondItem="plZ-Oo-OKu" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="KBH-u6-Zb5"/>
                             <constraint firstItem="O4o-3I-Uss" firstAttribute="leading" secondItem="8IC-Hf-scH" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="KOO-yM-zjr"/>
+                            <constraint firstItem="R2N-fc-OXB" firstAttribute="leading" secondItem="8IC-Hf-scH" secondAttribute="leading" type="default" id="MHz-eD-BBZ"/>
                             <constraint firstItem="Yub-ea-kgA" firstAttribute="baseline" secondItem="8IC-Hf-scH" secondAttribute="baseline" type="default" id="NBg-8z-xjA"/>
-                            <constraint firstItem="8IC-Hf-scH" firstAttribute="leading" secondItem="DNM-OK-oOp" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Obe-j8-tvU"/>
                             <constraint firstItem="DNM-OK-oOp" firstAttribute="leading" secondItem="Yub-ea-kgA" secondAttribute="leading" type="default" id="Piw-fv-PtA"/>
                             <constraint firstItem="plZ-Oo-OKu" firstAttribute="top" secondItem="VRq-Kf-per" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QfR-MY-z9A"/>
-                            <constraint firstItem="U9h-mz-ViP" firstAttribute="trailing" secondItem="CBV-Ta-3n0" secondAttribute="trailing" type="default" id="Tdq-c4-ZFd"/>
+                            <constraint firstItem="zxF-sT-KTE" firstAttribute="leading" secondItem="QJT-Pu-I1k" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="S9m-xK-Lbt"/>
                             <constraint firstItem="8DL-Y4-AEX" firstAttribute="top" secondItem="DNM-OK-oOp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TwR-f1-ulI"/>
                             <constraint firstItem="8IC-Hf-scH" firstAttribute="leading" secondItem="Yub-ea-kgA" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Uxw-os-Bis"/>
                             <constraint firstItem="Yub-ea-kgA" firstAttribute="top" secondItem="DLf-YF-ec1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VXo-oW-3ZP"/>
                             <constraint firstItem="VRq-Kf-per" firstAttribute="centerX" secondItem="plZ-Oo-OKu" secondAttribute="centerX" type="default" id="WD1-BH-6xb"/>
                             <constraint firstItem="EGe-uF-4RG" firstAttribute="leading" secondItem="DNM-OK-oOp" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Y1h-li-2W9"/>
-                            <constraint firstItem="U9h-mz-ViP" firstAttribute="leading" secondItem="8DL-Y4-AEX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ynb-Cl-gqg"/>
                             <constraint firstItem="YGc-IB-NDY" firstAttribute="top" secondItem="siy-Zw-nKu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zr5-4L-wTo"/>
                             <constraint firstItem="hlM-Vk-7Hl" firstAttribute="centerX" secondItem="9Yo-7r-ZCF" secondAttribute="centerX" type="default" id="Zt6-W5-qqW"/>
                             <constraint firstItem="DLf-YF-ec1" firstAttribute="top" secondItem="plZ-Oo-OKu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aAM-7c-ayo"/>
                             <constraint firstItem="O4o-3I-Uss" firstAttribute="baseline" secondItem="8IC-Hf-scH" secondAttribute="baseline" type="default" id="bFN-cK-jEF"/>
+                            <constraint firstItem="zxF-sT-KTE" firstAttribute="bottom" secondItem="CBV-Ta-3n0" secondAttribute="bottom" type="default" id="cWv-1f-QTv"/>
                             <constraint firstItem="siy-Zw-nKu" firstAttribute="baseline" secondItem="hlM-Vk-7Hl" secondAttribute="baseline" type="default" id="dMf-tr-g4M"/>
-                            <constraint firstItem="U9h-mz-ViP" firstAttribute="bottom" secondItem="CBV-Ta-3n0" secondAttribute="bottom" type="default" id="dms-vB-lXH"/>
+                            <constraint firstItem="zxF-sT-KTE" firstAttribute="leading" secondItem="O4o-3I-Uss" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="dkJ-D2-k96"/>
                             <constraint firstItem="O4o-3I-Uss" firstAttribute="leading" secondItem="EGe-uF-4RG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ehG-Vv-wDQ"/>
                             <constraint firstItem="QJT-Pu-I1k" firstAttribute="leading" secondItem="R2N-fc-OXB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="gZR-P6-oZD"/>
+                            <constraint firstItem="zxF-sT-KTE" firstAttribute="leading" secondItem="8DL-Y4-AEX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="gx8-Bd-ZMM"/>
                             <constraint firstItem="plZ-Oo-OKu" firstAttribute="leading" secondItem="DLf-YF-ec1" secondAttribute="leading" type="default" id="iBX-mY-dFo"/>
+                            <constraint firstItem="QJT-Pu-I1k" firstAttribute="leading" secondItem="O4o-3I-Uss" secondAttribute="leading" type="default" id="iUz-kJ-Mde"/>
                             <constraint firstItem="siy-Zw-nKu" firstAttribute="centerX" secondItem="YGc-IB-NDY" secondAttribute="centerX" type="default" id="jtW-O0-Sth"/>
                             <constraint firstItem="DNM-OK-oOp" firstAttribute="top" secondItem="Yub-ea-kgA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="k8L-Ce-utP"/>
                             <constraint firstItem="DNM-OK-oOp" firstAttribute="baseline" secondItem="EGe-uF-4RG" secondAttribute="baseline" type="default" id="kmZ-Ie-p8u"/>
                             <constraint firstItem="QJT-Pu-I1k" firstAttribute="baseline" secondItem="R2N-fc-OXB" secondAttribute="baseline" type="default" id="lMu-CB-04q"/>
+                            <constraint firstItem="8IC-Hf-scH" firstAttribute="leading" secondItem="EGe-uF-4RG" secondAttribute="leading" type="default" id="msY-hl-KlN"/>
                             <constraint firstItem="hlM-Vk-7Hl" firstAttribute="baseline" secondItem="VRq-Kf-per" secondAttribute="baseline" type="default" id="qil-uA-ZbU"/>
                             <constraint firstItem="YGc-IB-NDY" firstAttribute="leading" secondItem="9Yo-7r-ZCF" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rWd-3i-F5R"/>
-                            <constraint firstItem="U9h-mz-ViP" firstAttribute="top" secondItem="9Yo-7r-ZCF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tjj-Rl-egS"/>
                             <constraint firstItem="9Yo-7r-ZCF" firstAttribute="top" secondItem="hlM-Vk-7Hl" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vEu-Zs-7er"/>
                             <constraint firstItem="5Fy-St-1lF" firstAttribute="leading" secondItem="EGe-uF-4RG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zFY-BU-Kys"/>
+                            <constraint firstItem="zxF-sT-KTE" firstAttribute="top" secondItem="9Yo-7r-ZCF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zON-8B-A3b"/>
+                            <constraint firstItem="zxF-sT-KTE" firstAttribute="leading" secondItem="5Fy-St-1lF" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zxk-6q-gAR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="930-ty-rt7"/>
@@ -317,6 +349,19 @@
         </class>
         <class className="ChordReferenceController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChordReferenceController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonClicked:"/>
+                <relationship kind="outlet" name="buttonA" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonB" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonC" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonD" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonE" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonF" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonG" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSubmit" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonflat" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonsharp" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

@@ -139,7 +139,6 @@
 				4DF961A01665502E00FC0762 /* MasterViewController.m */,
 				4DF961A21665502E00FC0762 /* DetailViewController.h */,
 				4DF961A31665502E00FC0762 /* DetailViewController.m */,
-				4DF9618B1665502E00FC0762 /* Supporting Files */,
 				4DA3C97A166C28B200F1AA3C /* ChordReferenceController.h */,
 				4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */,
 				4DA3C97E166C2BB200F1AA3C /* ChordQuizController.h */,
@@ -148,6 +147,7 @@
 				4DB5A0761671FFC1004276C0 /* Chords.m */,
 				4DB5A07816720201004276C0 /* BackEndDictionary.h */,
 				4DB5A07916720201004276C0 /* BackEndDictionary.m */,
+				4DF9618B1665502E00FC0762 /* Supporting Files */,
 			);
 			path = MusicTheoryTutor;
 			sourceTree = "<group>";
@@ -409,11 +409,7 @@
 				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "MusicTheoryTutor/MusicTheoryTutor-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"<Multiple",
-					"values>",
-					"${HOME}/Desktop/j2objc/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -427,11 +423,7 @@
 				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "MusicTheoryTutor/MusicTheoryTutor-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"<Multiple",
-					"values>",
-					"${HOME}/Desktop/j2objc/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
