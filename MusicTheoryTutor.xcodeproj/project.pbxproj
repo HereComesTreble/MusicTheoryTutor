@@ -20,7 +20,6 @@
 		4DF961971665502E00FC0762 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF961961665502E00FC0762 /* Default.png */; };
 		4DF961991665502E00FC0762 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF961981665502E00FC0762 /* Default@2x.png */; };
 		4DF9619B1665502E00FC0762 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF9619A1665502E00FC0762 /* Default-568h@2x.png */; };
-		4DF9619E1665502E00FC0762 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF9619C1665502E00FC0762 /* MainStoryboard.storyboard */; };
 		4DF961A11665502E00FC0762 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF961A01665502E00FC0762 /* MasterViewController.m */; };
 		4DF961A41665502E00FC0762 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF961A31665502E00FC0762 /* DetailViewController.m */; };
 		4DF961AC1665502E00FC0762 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961AB1665502E00FC0762 /* SenTestingKit.framework */; };
@@ -28,6 +27,9 @@
 		4DF961AE1665502E00FC0762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961861665502E00FC0762 /* Foundation.framework */; };
 		4DF961B61665502E00FC0762 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DF961B41665502E00FC0762 /* InfoPlist.strings */; };
 		4DF961B91665502E00FC0762 /* MusicTheoryTutorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF961B81665502E00FC0762 /* MusicTheoryTutorTests.m */; };
+		777D570E16A939F200ED085C /* CalloutView.png in Resources */ = {isa = PBXBuildFile; fileRef = 777D570D16A939F200ED085C /* CalloutView.png */; };
+		7792938B16A9D31D00DC0715 /* Rand.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792938A16A9D31D00DC0715 /* Rand.m */; };
+		7792938E16A9F5FF00DC0715 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7792938D16A9F5FF00DC0715 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +64,6 @@
 		4DF961961665502E00FC0762 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4DF961981665502E00FC0762 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4DF9619A1665502E00FC0762 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4DF9619D1665502E00FC0762 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4DF9619F1665502E00FC0762 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4DF961A01665502E00FC0762 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		4DF961A21665502E00FC0762 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -73,6 +74,10 @@
 		4DF961B51665502E00FC0762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4DF961B71665502E00FC0762 /* MusicTheoryTutorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicTheoryTutorTests.h; sourceTree = "<group>"; };
 		4DF961B81665502E00FC0762 /* MusicTheoryTutorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicTheoryTutorTests.m; sourceTree = "<group>"; };
+		777D570D16A939F200ED085C /* CalloutView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalloutView.png; sourceTree = "<group>"; };
+		7792938916A9D31C00DC0715 /* Rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rand.h; sourceTree = "<group>"; };
+		7792938A16A9D31D00DC0715 /* Rand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand.m; sourceTree = "<group>"; };
+		7792938D16A9F5FF00DC0715 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,9 +137,9 @@
 		4DF9618A1665502E00FC0762 /* MusicTheoryTutor */ = {
 			isa = PBXGroup;
 			children = (
+				7792938D16A9F5FF00DC0715 /* MainStoryboard.storyboard */,
 				4DF961931665502E00FC0762 /* AppDelegate.h */,
 				4DF961941665502E00FC0762 /* AppDelegate.m */,
-				4DF9619C1665502E00FC0762 /* MainStoryboard.storyboard */,
 				4DF9619F1665502E00FC0762 /* MasterViewController.h */,
 				4DF961A01665502E00FC0762 /* MasterViewController.m */,
 				4DF961A21665502E00FC0762 /* DetailViewController.h */,
@@ -147,6 +152,8 @@
 				4DB5A0761671FFC1004276C0 /* Chords.m */,
 				4DB5A07816720201004276C0 /* BackEndDictionary.h */,
 				4DB5A07916720201004276C0 /* BackEndDictionary.m */,
+				7792938916A9D31C00DC0715 /* Rand.h */,
+				7792938A16A9D31D00DC0715 /* Rand.m */,
 				4DF9618B1665502E00FC0762 /* Supporting Files */,
 			);
 			path = MusicTheoryTutor;
@@ -155,6 +162,7 @@
 		4DF9618B1665502E00FC0762 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				777D570D16A939F200ED085C /* CalloutView.png */,
 				4DF9618C1665502E00FC0762 /* MusicTheoryTutor-Info.plist */,
 				4DF9618D1665502E00FC0762 /* InfoPlist.strings */,
 				4DF961901665502E00FC0762 /* main.m */,
@@ -260,7 +268,8 @@
 				4DF961971665502E00FC0762 /* Default.png in Resources */,
 				4DF961991665502E00FC0762 /* Default@2x.png in Resources */,
 				4DF9619B1665502E00FC0762 /* Default-568h@2x.png in Resources */,
-				4DF9619E1665502E00FC0762 /* MainStoryboard.storyboard in Resources */,
+				777D570E16A939F200ED085C /* CalloutView.png in Resources */,
+				7792938E16A9F5FF00DC0715 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +312,7 @@
 				4DA3C980166C2BB200F1AA3C /* ChordQuizController.m in Sources */,
 				4DB5A0771671FFC1004276C0 /* Chords.m in Sources */,
 				4DB5A07A16720201004276C0 /* BackEndDictionary.m in Sources */,
+				7792938B16A9D31D00DC0715 /* Rand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,14 +341,6 @@
 				4DF9618E1665502E00FC0762 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4DF9619C1665502E00FC0762 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DF9619D1665502E00FC0762 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		4DF961B41665502E00FC0762 /* InfoPlist.strings */ = {
