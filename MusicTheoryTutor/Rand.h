@@ -11,7 +11,11 @@
 @interface Rand : NSObject
 
 @property (strong, nonatomic) NSArray *notes;
+@property (strong, nonatomic) NSArray *abbrNames3;
+@property (strong, nonatomic) NSArray *abbrNames4;
+@property (strong, nonatomic) NSArray *abbrNames5;
 
 - (NSString *)getRandomNote;
+- (NSString *)getRandomName:(BOOL)three four:(BOOL)four five:(BOOL)five;
 
 @end

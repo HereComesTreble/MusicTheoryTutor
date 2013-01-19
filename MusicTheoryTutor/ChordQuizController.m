@@ -46,7 +46,7 @@
 
 - (void)getNewNote:(id)sender
 {
-    [quizNote setText:[randomGenerator getRandomNote]];
+    [quizNote setText:[randomGenerator getRandomName:YES four:YES five:YES]];
 }
 
 - (void)settingsButtonClicked
