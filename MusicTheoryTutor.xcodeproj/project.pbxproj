@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DA3C97C166C28B200F1AA3C /* ChordReferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */; };
-		4DA3C980166C2BB200F1AA3C /* ChordQuizController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3C97F166C2BB200F1AA3C /* ChordQuizController.m */; };
+		4DA3C980166C2BB200F1AA3C /* ChordNamingQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3C97F166C2BB200F1AA3C /* ChordNamingQuizViewController.m */; };
 		4DB5A0771671FFC1004276C0 /* Chords.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5A0761671FFC1004276C0 /* Chords.m */; };
 		4DB5A07A16720201004276C0 /* BackEndDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5A07916720201004276C0 /* BackEndDictionary.m */; };
 		4DF961851665502E00FC0762 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961841665502E00FC0762 /* UIKit.framework */; };
@@ -30,6 +30,9 @@
 		777D570E16A939F200ED085C /* CalloutView.png in Resources */ = {isa = PBXBuildFile; fileRef = 777D570D16A939F200ED085C /* CalloutView.png */; };
 		7792938B16A9D31D00DC0715 /* Rand.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792938A16A9D31D00DC0715 /* Rand.m */; };
 		7792938E16A9F5FF00DC0715 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7792938D16A9F5FF00DC0715 /* MainStoryboard.storyboard */; };
+		7792939116AB1C0700DC0715 /* QuizzesMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939016AB1C0700DC0715 /* QuizzesMainViewController.m */; };
+		7792939416AB1E0600DC0715 /* NoteNamingQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939316AB1E0600DC0715 /* NoteNamingQuizViewController.m */; };
+		7792939716AD094A00DC0715 /* UserInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939616AD094900DC0715 /* UserInputButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +48,8 @@
 /* Begin PBXFileReference section */
 		4DA3C97A166C28B200F1AA3C /* ChordReferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordReferenceController.h; sourceTree = "<group>"; };
 		4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordReferenceController.m; sourceTree = "<group>"; };
-		4DA3C97E166C2BB200F1AA3C /* ChordQuizController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordQuizController.h; sourceTree = "<group>"; };
-		4DA3C97F166C2BB200F1AA3C /* ChordQuizController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordQuizController.m; sourceTree = "<group>"; };
+		4DA3C97E166C2BB200F1AA3C /* ChordNamingQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordNamingQuizViewController.h; sourceTree = "<group>"; };
+		4DA3C97F166C2BB200F1AA3C /* ChordNamingQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordNamingQuizViewController.m; sourceTree = "<group>"; };
 		4DB5A0751671FFC1004276C0 /* Chords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chords.h; sourceTree = "<group>"; };
 		4DB5A0761671FFC1004276C0 /* Chords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chords.m; sourceTree = "<group>"; };
 		4DB5A07816720201004276C0 /* BackEndDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackEndDictionary.h; sourceTree = "<group>"; };
@@ -78,6 +81,12 @@
 		7792938916A9D31C00DC0715 /* Rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rand.h; sourceTree = "<group>"; };
 		7792938A16A9D31D00DC0715 /* Rand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand.m; sourceTree = "<group>"; };
 		7792938D16A9F5FF00DC0715 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7792938F16AB1C0600DC0715 /* QuizzesMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizzesMainViewController.h; sourceTree = "<group>"; };
+		7792939016AB1C0700DC0715 /* QuizzesMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizzesMainViewController.m; sourceTree = "<group>"; };
+		7792939216AB1E0600DC0715 /* NoteNamingQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteNamingQuizViewController.h; sourceTree = "<group>"; };
+		7792939316AB1E0600DC0715 /* NoteNamingQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteNamingQuizViewController.m; sourceTree = "<group>"; };
+		7792939516AD094900DC0715 /* UserInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInputButton.h; sourceTree = "<group>"; };
+		7792939616AD094900DC0715 /* UserInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,14 +155,20 @@
 				4DF961A31665502E00FC0762 /* DetailViewController.m */,
 				4DA3C97A166C28B200F1AA3C /* ChordReferenceController.h */,
 				4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */,
-				4DA3C97E166C2BB200F1AA3C /* ChordQuizController.h */,
-				4DA3C97F166C2BB200F1AA3C /* ChordQuizController.m */,
+				7792938F16AB1C0600DC0715 /* QuizzesMainViewController.h */,
+				7792939016AB1C0700DC0715 /* QuizzesMainViewController.m */,
+				4DA3C97E166C2BB200F1AA3C /* ChordNamingQuizViewController.h */,
+				4DA3C97F166C2BB200F1AA3C /* ChordNamingQuizViewController.m */,
+				7792939216AB1E0600DC0715 /* NoteNamingQuizViewController.h */,
+				7792939316AB1E0600DC0715 /* NoteNamingQuizViewController.m */,
 				4DB5A0751671FFC1004276C0 /* Chords.h */,
 				4DB5A0761671FFC1004276C0 /* Chords.m */,
 				4DB5A07816720201004276C0 /* BackEndDictionary.h */,
 				4DB5A07916720201004276C0 /* BackEndDictionary.m */,
 				7792938916A9D31C00DC0715 /* Rand.h */,
 				7792938A16A9D31D00DC0715 /* Rand.m */,
+				7792939516AD094900DC0715 /* UserInputButton.h */,
+				7792939616AD094900DC0715 /* UserInputButton.m */,
 				4DF9618B1665502E00FC0762 /* Supporting Files */,
 			);
 			path = MusicTheoryTutor;
@@ -309,10 +324,13 @@
 				4DF961A11665502E00FC0762 /* MasterViewController.m in Sources */,
 				4DF961A41665502E00FC0762 /* DetailViewController.m in Sources */,
 				4DA3C97C166C28B200F1AA3C /* ChordReferenceController.m in Sources */,
-				4DA3C980166C2BB200F1AA3C /* ChordQuizController.m in Sources */,
+				4DA3C980166C2BB200F1AA3C /* ChordNamingQuizViewController.m in Sources */,
 				4DB5A0771671FFC1004276C0 /* Chords.m in Sources */,
 				4DB5A07A16720201004276C0 /* BackEndDictionary.m in Sources */,
 				7792938B16A9D31D00DC0715 /* Rand.m in Sources */,
+				7792939116AB1C0700DC0715 /* QuizzesMainViewController.m in Sources */,
+				7792939416AB1E0600DC0715 /* NoteNamingQuizViewController.m in Sources */,
+				7792939716AD094A00DC0715 /* UserInputButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
