@@ -37,7 +37,7 @@
     [self.navigationItem setTitle:@"Chord Naming Quiz"];
     
     
-    TILE_Y = 120.0f;
+    TILE_Y = 130.0f;
     randomGenerator = [Rand new];
 }
 
