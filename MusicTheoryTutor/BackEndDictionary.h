@@ -11,26 +11,35 @@
 
 @interface BackEndDictionary : NSObject
 
+-(id)init;
+-(int)findIndex: (NSMutableString *)n;
+
 @end
 
 //three note chords
 
+Chords *Major, *Flattened5th, *Minor, *Diminished,
+*Augmented, *Suspended2nd, *Suspended4th, *PowerChord, *Major7th,
+*Major7thSuspended2nd, *Major7thSuspended4th, *Major7thAugmented5th,
+*Major7thFlattened5th, *Sixth, *MajorFlat6, *MajorAdd4th, *MajorAdd9th,
+*Dominant7th, *Dominant7thSuspended2nd, *Dominant7thSuspended4th,
+*Dominant7thAugmented5th, *Dominant7thFlattened5th, *Minor7th,
+*MinorMajor7th, *MinorAdd4th, *MinorAdd9th, *MinorFlattened6th,
+*Minor6th, *HalfDiminished7th, *FullyDiminished7th, *Major6thAdd9th,
+*Minor6thAdd9th, *DominantAdd9th, *Dominant9thFlattened5th,
+*Dominant9thAugmented5th, *Minor9th, *Minor9thFlattened5th, *Major9th,
+*Major9thSuspended4th, *Major7thAddFlattened9th, *DominantAdd6th,
+*MinorMajor9th, *MinorMajorFlattened9th, *DominantAddAugmented9th,
+*DominantFlattened5thAddAugmented9th, *DominantAddFlattened9th,
+*Minor7thFlattened9th, *Minor7thAugmented9th;
 
 
 
 
 
 //TODO must initialized these in the init
-Chords * Major;
-Chords * Flattened5th;
-Chords *Minor;
-Chords *Diminished;
-Chords *Augmented;
-Chords *Suspended2nd;
-Chords *Suspended4th;
-Chords *PowerChord;
 
-Chords * dict[8];
+NSMutableArray *dict;
 
 
 
