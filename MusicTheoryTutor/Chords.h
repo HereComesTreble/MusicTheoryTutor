@@ -10,6 +10,7 @@
 
 @interface Chords : NSObject
 {
+    @public
     int intervalOne, intervalTwo, intervalThree, intervalFour, intervalFive, num;
     
     NSMutableString *name, *abbrName, *first, *second, *third, *fourth, *fifth;

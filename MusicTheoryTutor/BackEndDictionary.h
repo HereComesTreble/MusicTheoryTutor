@@ -34,7 +34,29 @@ Chords *Major, *Flattened5th, *Minor, *Diminished,
 *Minor7thFlattened9th, *Minor7thAugmented9th;
 
 
-
+NSString * scalesDictionary[21][12] = {
+{ @"Ab", @"Bbb", @"Bb", @"Cb", @"C", @"Db", @"Ebb",@"Eb",@"Fb",@"F",@"Gb",@"G"},//Ab
+{ @"A", @"Bb", @"B", @"C", @"C#", @"D", @"Eb", @"E", @"F", @"F#", @"G", @"G#" },// A
+{ @"A#", @"B", @"B#", @"C#", @"Cx", @"D#", @"E", @"E#", @"F#", @"Fx", @"G#",@"Gx"},//A#
+{@"Bb", @"Cb", @"C", @"Db",@"D", @"Eb", @"Fb", @"F", @"Gb",@"G",@"Ab", @"A"},//Bb
+{ @"B", @"C", @"C#", @"D", @"D#", @"E", @"F", @"F#", @"G", @"G#", @"A", @"A#" },// B
+{@"B#",@"C#",@"Cx",@"D#",@"Dx",@"E#",@"F#",@"Fx",@"G#",@"Gx",@"A#",@"Ax"},//B#
+{@"Cb",@"Dbb",@"Db", @"Ebb",@"Eb", @"Fb", @"Gbb",@"Gb", @"Abb", @"Ab", @"Bbb",@"Bb"},//Cb
+{ @"C", @"Db", @"D", @"Eb", @"E", @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"B" },// C
+{@"C#", @"D", @"D#",@"E", @"E#", @"F#", @"G", @"G#", @"A", @"A#", @"B", @"B#"},//C#
+{@"Db", @"Ebb",@"Eb", @"Fb", @"F", @"Gb", @"Abb", @"Ab", @"Bbb", @"Bb", @"Cb",@"C"},//Db
+{ @"D", @"Eb", @"E", @"F", @"F#", @"G", @"Ab", @"A", @"Bb", @"B", @"C", @"C#" },// D
+{@"D#", @"E", @"E#",@"F#", @"Fx", @"G#", @"A", @"A#", @"B", @"B#", @"C#", @"Cx"},//D#
+{@"Eb", @"Fb",@"F", @"Gb", @"G", @"Ab", @"Bbb", @"Bb", @"Cb", @"C", @"Db", @"D"},//Eb
+{ @"E", @"F", @"F#", @"G", @"G#", @"A", @"Bb", @"B", @"C", @"C#", @"D", @"D#" },// E
+{@"E#",@"F#",@"Fx",@"G#",@"Gx",@"A#",@"B",@"B#", @"C#", @"Cx", @"D#", @"Dx"},//E#
+{@"Fb", @"Gbb", @"Gb", @"Abb", @"Ab", @"Bbb", @"Cbb", @"Cb", @"Dbb", @"Db", @"Ebb",@"Eb"},//Fb
+{ @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"Cb", @"C", @"Db", @"D", @"Eb", @"E" },// F
+{@"F#",@"G",@"G#",@"A", @"A#",@"B", @"C", @"C#", @"D", @"D#", @"E", @"E#"},//F#
+{@"Gb", @"Abb", @"Ab",@"Bbb",@"Bb", @"Cb",@"Dbb", @"Db", @"Ebb", @"Eb", @"Fb", @"F"},//Gb
+{ @"G", @"Ab", @"A", @"Bb", @"B", @"C", @"Db", @"D", @"Eb", @"E", @"F", @"F#" }, // G
+{@"G#", @"A", @"A#", @"B", @"B#", @"C#", @"D", @"D#",@"E",@"E#",@"F#", @"Fx"}//G#
+};
 
 
 //TODO must initialized these in the init
