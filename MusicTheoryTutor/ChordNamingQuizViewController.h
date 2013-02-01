@@ -27,15 +27,20 @@
 @property (strong, nonatomic) IBOutlet UIButton *triadButton;
 @property (strong, nonatomic) IBOutlet UIButton *fourNoteChordButton;
 @property (strong, nonatomic) IBOutlet UIButton *fiveNoteChordButton;
+@property (nonatomic) BOOL triadIsEnabled;
+@property (nonatomic) BOOL fourNoteChordIsEnabled;
+@property (nonatomic) BOOL fiveNoteChordIsEnabled;
 @property (strong, nonatomic) IBOutlet UILabel *quizNote;
 @property (strong, nonatomic) NSArray *inputTileArray;
 @property (nonatomic) float TILE_Y;
+@property (nonatomic) int userInputTileEnabled;
 
 - (IBAction)getNewNote;
 - (IBAction)settingsButtonClicked;
 - (IBAction)changeMode:(id)sender;
-- (void)setupInputTiles;
 - (IBAction)userInputTileClickes:(UserInputButton *)sender;
+- (IBAction)handleUserInput:(UserInputButton *)sender;
+- (void)setupInputTiles;
 - (void)resetTiles;
 
 @end

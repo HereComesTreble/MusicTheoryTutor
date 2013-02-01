@@ -16,6 +16,7 @@
 @property (nonatomic) float m_y;
 
 - (id)initWithPosition:(float)x y:(float)y;
+-(void)changePosition:(float)x y:(float)y;
 
 @end
 

@@ -18,13 +18,15 @@
 
 @implementation ChordNamingQuizViewController
 
-@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, quizNote, inputTileArray, TILE_Y;
+@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, quizNote, inputTileArray, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        
         
     }
     return self;
@@ -39,6 +41,16 @@
     
     TILE_Y = 130.0f;
     randomGenerator = [Rand new];
+    
+    triadIsEnabled = NO;
+    fourNoteChordIsEnabled = NO;
+    fiveNoteChordIsEnabled = YES;
+    
+    inputTile_0 = [[UserInputButton alloc] init];
+    inputTile_1 = [[UserInputButton alloc] init];
+    inputTile_2 = [[UserInputButton alloc] init];
+    inputTile_3 = [[UserInputButton alloc] init];
+    inputTile_4 = [[UserInputButton alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -48,10 +60,8 @@
     // set new note
     [self getNewNote];
     
-    // set callout view
+    // hide mode callout view
     calloutView.alpha = 0;
-    [triadButton setHighlighted:YES];
-    [triadButton setEnabled:NO];
     
     // setup user input tiles here
     [self setupInputTiles];
@@ -90,48 +100,25 @@
     
     switch (buttonClicked.tag) {
         case 0:
-            // set enabling
-            [triadButton setEnabled:NO];
-            [fourNoteChordButton setEnabled:YES];
-            [fiveNoteChordButton setEnabled:YES];
-            
             // set highlight
-            [triadButton setHighlighted:YES];
-            [fourNoteChordButton setHighlighted:NO];
-            [fiveNoteChordButton setHighlighted:NO];
-            
-            // show three fields here
+            triadIsEnabled = !triadIsEnabled;
+            [triadButton setHighlighted:triadIsEnabled];
             break;
         case 1:
-            // set enabling
-            [triadButton setEnabled:YES];
-            [fourNoteChordButton setEnabled:NO];
-            [fiveNoteChordButton setEnabled:YES];
-            
             // set highlight
-            [triadButton setHighlighted:NO];
-            [fourNoteChordButton setHighlighted:YES];
-            [fiveNoteChordButton setHighlighted:NO];
-            
-            // show four fields here
+            fourNoteChordIsEnabled = !fourNoteChordIsEnabled;
+            [fourNoteChordButton setHighlighted:fourNoteChordIsEnabled];
             break;
         case 2:
-            // set enabling
-            [triadButton setEnabled:YES];
-            [fourNoteChordButton setEnabled:YES];
-            [fiveNoteChordButton setEnabled:NO];
-            
             // set highlight
-            [triadButton setHighlighted:NO];
-            [fourNoteChordButton setHighlighted:NO];
-            [fiveNoteChordButton setHighlighted:YES];
-            
-            // show five fields here
+            fiveNoteChordIsEnabled = !fiveNoteChordIsEnabled;
+            [fiveNoteChordButton setHighlighted:fiveNoteChordIsEnabled];
             break;
-            
         default:
             break;
     }
+    
+    // display corresponding number of input fields
     [self setupInputTiles];
 }
 
@@ -140,43 +127,41 @@
     [self resetTiles];
     
     float spacer = 5.0f;
+    float tileViewWidth;
     
-    if (!triadButton.enabled)
+    /* TODO: Get chord number from BackEndDictionary */
+    /* chord number will determine number of tiles to show */
+    
+    if (triadIsEnabled)
     {
-        inputTile_0 = [[UserInputButton alloc] initWithPosition:(95.0f)
-                                                              y:TILE_Y];
-        inputTile_1 = [[UserInputButton alloc] initWithPosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
-        inputTile_2 = [[UserInputButton alloc] initWithPosition:[inputTile_1 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
+        tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + (spacer * 2.0f);
         
-        inputTileArray  = [NSArray arrayWithObjects:inputTile_0, inputTile_1, inputTile_2, nil];
+        [inputTile_0 changePosition:(320.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
+        [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+        [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+        
+        inputTileArray  = [NSArray arrayWithObjects:inputTile_0, inputTile_1, inputTile_2, nil];        
     }
-    else if (!fourNoteChordButton.enabled)
+    else if (fourNoteChordIsEnabled)
     {
-        inputTile_0 = [[UserInputButton alloc] initWithPosition:(72.5f)
-                                                              y:TILE_Y];
-        inputTile_1 = [[UserInputButton alloc] initWithPosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
-        inputTile_2 = [[UserInputButton alloc] initWithPosition:[inputTile_1 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
-        inputTile_3 = [[UserInputButton alloc] initWithPosition:[inputTile_2 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
+        tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + (spacer * 3.0f);
+        
+        [inputTile_0 changePosition:(320.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
+        [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+        [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
+        [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
         
         inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, nil];
     }
     else
     {
-        inputTile_0 = [[UserInputButton alloc] initWithPosition:(50.0f)
-                                                              y:TILE_Y];
-        inputTile_1 = [[UserInputButton alloc] initWithPosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
-        inputTile_2 = [[UserInputButton alloc] initWithPosition:[inputTile_1 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
-        inputTile_3 = [[UserInputButton alloc] initWithPosition:[inputTile_2 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
-        inputTile_4 = [[UserInputButton alloc] initWithPosition:[inputTile_3 m_x] + [inputTile_0 TILE_WIDTH] + spacer
-                                                              y:TILE_Y];
+        tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + [inputTile_4 TILE_WIDTH]+ (spacer * 3.0f);
+        
+        [inputTile_0 changePosition:(320.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
+        [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+        [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
+        [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
+        [inputTile_4 changePosition:[inputTile_3 m_x] + [inputTile_3 TILE_WIDTH] + spacer y:TILE_Y];
         
         inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, inputTile_4, nil];
     }
@@ -206,9 +191,64 @@
     [inputTile_4 addTarget:self action:@selector(inputTileClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (IBAction)handleUserInput:(UserInputButton *)sender
+{
+    NSString *newTitle = [[inputTileArray objectAtIndex:userInputTileEnabled] currentTitle];
+    
+    switch (sender.tag) {
+        case 0:
+            // A button was pressed
+            newTitle = [newTitle stringByAppendingString:@"A"];
+            break;
+        case 1:
+            // B button was pressed
+            newTitle = [newTitle stringByAppendingString:@"B"];
+            break;
+        case 2:
+            // C button was pressed
+            newTitle = [newTitle stringByAppendingString:@"C"];
+            break;
+        case 3:
+            // D button was pressed
+            newTitle = [newTitle stringByAppendingString:@"D"];
+            break;
+        case 4:
+            // E button was pressed
+            newTitle = [newTitle stringByAppendingString:@"E"];
+            break;
+        case 5:
+            // F button was pressed
+            newTitle = [newTitle stringByAppendingString:@"F"];
+            break;
+        case 6:
+            // G button was pressed
+            newTitle = [newTitle stringByAppendingString:@"G"];
+            break;
+        case 7:
+            // ♭ button was pressed
+            newTitle = [newTitle stringByAppendingString:@"♭"];
+            break;
+        case 8:
+            // ♯ button was pressed
+            newTitle = [newTitle stringByAppendingString:@"♯"];
+            break;
+        case 9:
+            // CLR button was pressed
+            newTitle = @"";
+            break;
+        default:
+            break;
+    }
+    
+    [[inputTileArray objectAtIndex:userInputTileEnabled] setTitle:newTitle forState:UIControlStateNormal];
+    [[inputTileArray objectAtIndex:userInputTileEnabled] setNeedsDisplay];
+}
+
 - (void)inputTileClicked:(UserInputButton *)sender
 {
-    switch (sender.tag) {
+    userInputTileEnabled = sender.tag;
+    
+    switch (userInputTileEnabled) {
         case 0:
             [inputTile_0 setEnabled:NO];
             [inputTile_1 setEnabled:YES];
