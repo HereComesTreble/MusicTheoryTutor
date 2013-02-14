@@ -7,8 +7,6 @@
 //
 
 #import "ChordNamingQuizViewController.h"
-#import "Rand.h"
-#import "UserInputButton.h"
 
 @interface ChordNamingQuizViewController ()
 {
@@ -18,19 +16,7 @@
 
 @implementation ChordNamingQuizViewController
 
-@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, quizNote, inputTileArray, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        
-        
-        
-    }
-    return self;
-}
+@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, quizNote, inputTileArray, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled, currentChordRoot, currentChordType, answerLabel;
 
 - (void)viewDidLoad
 {
@@ -38,13 +24,14 @@
     
     [self.navigationItem setTitle:@"Chord Naming Quiz"];
     
-    
     TILE_Y = 130.0f;
     randomGenerator = [Rand new];
+    chordDictionary = [ChordDictionary new];
     
-    triadIsEnabled = NO;
+    triadIsEnabled = YES;
+    triadButton.highlighted = YES;
     fourNoteChordIsEnabled = NO;
-    fiveNoteChordIsEnabled = YES;
+    fiveNoteChordIsEnabled = NO;
     
     inputTile_0 = [[UserInputButton alloc] init];
     inputTile_1 = [[UserInputButton alloc] init];
@@ -58,7 +45,7 @@
     [super viewWillAppear:YES];
     
     // set new note
-    [self getNewNote];
+    [self getNewChord];
     
     // hide mode callout view
     calloutView.alpha = 0;
@@ -67,9 +54,16 @@
     [self setupInputTiles];
 }
 
-- (void)getNewNote
+- (void)getNewChord
 {
-    [quizNote setText:[randomGenerator getRandomName:YES four:YES five:YES]];
+    currentChordRoot = [randomGenerator getRandomNote];
+    
+    currentChordType = [randomGenerator getRandomChordType:triadIsEnabled
+                                                      four:fourNoteChordIsEnabled
+                                                      five:fiveNoteChordIsEnabled];
+    
+    [quizNote setText: [NSMutableString stringWithFormat:@"%@ %@", currentChordRoot, currentChordType]];
+    [self setupInputTiles];
 }
 
 - (void)settingsButtonClicked
@@ -117,9 +111,6 @@
         default:
             break;
     }
-    
-    // display corresponding number of input fields
-    [self setupInputTiles];
 }
 
 - (void)setupInputTiles
@@ -128,42 +119,36 @@
     
     float spacer = 5.0f;
     float tileViewWidth;
-    
-    /* TODO: Get chord number from BackEndDictionary */
-    /* chord number will determine number of tiles to show */
-    
-    if (triadIsEnabled)
-    {
-        tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + (spacer * 2.0f);
         
-        [inputTile_0 changePosition:(320.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
-        [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
-        [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+    switch ((int)[chordDictionary getNum:currentChordType]) {
+        case 3:
+            tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + (spacer * 2.0f);
+            [inputTile_0 changePosition:(315.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
+            [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+            [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
         
-        inputTileArray  = [NSArray arrayWithObjects:inputTile_0, inputTile_1, inputTile_2, nil];        
-    }
-    else if (fourNoteChordIsEnabled)
-    {
-        tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + (spacer * 3.0f);
+            inputTileArray  = [NSArray arrayWithObjects:inputTile_0, inputTile_1, inputTile_2, nil];
+            break;
+        case 4:
+            tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + (spacer * 3.0f);
+            [inputTile_0 changePosition:(315.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
+            [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+            [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
+            [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
         
-        [inputTile_0 changePosition:(320.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
-        [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
-        [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
-        [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
-        
-        inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, nil];
-    }
-    else
-    {
-        tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + [inputTile_4 TILE_WIDTH]+ (spacer * 3.0f);
-        
-        [inputTile_0 changePosition:(320.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
-        [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
-        [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
-        [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
-        [inputTile_4 changePosition:[inputTile_3 m_x] + [inputTile_3 TILE_WIDTH] + spacer y:TILE_Y];
-        
-        inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, inputTile_4, nil];
+            inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, nil];
+            break;
+        case 5:
+            tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + [inputTile_4 TILE_WIDTH]+ (spacer * 3.0f);
+            [inputTile_0 changePosition:(315.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
+            [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
+            [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
+            [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
+            [inputTile_4 changePosition:[inputTile_3 m_x] + [inputTile_3 TILE_WIDTH] + spacer y:TILE_Y];
+            inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, inputTile_4, nil];
+            break;
+        default:
+            break;
     }
     
     for (int i=0; i < [inputTileArray count]; i++)
@@ -193,95 +178,192 @@
 
 - (IBAction)handleUserInput:(UserInputButton *)sender
 {
-    NSString *newTitle = [[inputTileArray objectAtIndex:userInputTileEnabled] currentTitle];
+    NSString *temp = [NSString stringWithString:[[inputTileArray objectAtIndex:userInputTileEnabled] currentTitle]];
+    NSString *note = @"";
+    NSString *stepSymbol = @"";
+    
+//    NSLog(@"\U0001D12B"); // unicode for double flat 𝄫
+//    NSLog(@"\U0001D12A"); // unicode for double sharp 𝄪
+    
+    if([temp length] > 0)
+    {
+        // check if no note has been entered yet
+        if([[NSString stringWithFormat:@"%C", [temp characterAtIndex:0]] isEqualToString: @"♭"]
+           || [[NSString stringWithFormat:@"%C", [temp characterAtIndex:0]] isEqualToString: @"♯"])
+        {
+            stepSymbol = [NSString stringWithFormat:@"%C", [temp characterAtIndex:0]];
+        }
+        else
+        {
+            note = [NSString stringWithFormat:@"%C", [temp characterAtIndex:0]];
+        }
+        
+        // check for a step symbol
+        if([temp length] > 1)
+        {
+            stepSymbol = [NSString stringWithFormat:@"%C", [temp characterAtIndex:1]];
+        
+            // check for two half step symbols and no note
+            if ([[NSString stringWithFormat:@"%C", [temp characterAtIndex:0]] isEqualToString: @"♭"]
+                || [[NSString stringWithFormat:@"%C", [temp characterAtIndex:0]] isEqualToString: @"♯"])
+            {
+                stepSymbol = [NSString stringWithFormat:@"%@%C", stepSymbol, [temp characterAtIndex:1]];
+            }
+        }
+        if([temp length] > 2)
+        {
+            stepSymbol = [NSString stringWithFormat:@"%@%C", stepSymbol, [temp characterAtIndex:2]];
+        }
+    }
     
     switch (sender.tag) {
         case 0:
             // A button was pressed
-            newTitle = [newTitle stringByAppendingString:@"A"];
+            note = @"A";
             break;
         case 1:
             // B button was pressed
-            newTitle = [newTitle stringByAppendingString:@"B"];
+            note = @"B";
             break;
         case 2:
             // C button was pressed
-            newTitle = [newTitle stringByAppendingString:@"C"];
+            note = @"C";
             break;
         case 3:
             // D button was pressed
-            newTitle = [newTitle stringByAppendingString:@"D"];
+            note = @"D";
             break;
         case 4:
             // E button was pressed
-            newTitle = [newTitle stringByAppendingString:@"E"];
+            note = @"E";
             break;
         case 5:
             // F button was pressed
-            newTitle = [newTitle stringByAppendingString:@"F"];
+            note = @"F";
             break;
         case 6:
             // G button was pressed
-            newTitle = [newTitle stringByAppendingString:@"G"];
+            note = @"G";
             break;
         case 7:
             // ♭ button was pressed
-            newTitle = [newTitle stringByAppendingString:@"♭"];
+            if([stepSymbol length] == 2) // means str is either 𝄪 or 𝄫 𝄪
+            {
+                if([[NSString stringWithFormat:@"%C", [stepSymbol characterAtIndex:0]] isEqualToString: @"♯"]) // remove one, or do nothing
+                    stepSymbol = [NSMutableString stringWithString:@"♯"];
+            }
+            else if([stepSymbol length] == 1) // means str has a single half-step symbol
+            {
+                if([[NSString stringWithFormat:@"%C", [stepSymbol characterAtIndex:0]] isEqualToString: @"♯"]) // remove ♯
+                    stepSymbol = [NSMutableString stringWithString:@""];
+                else // add a ♭
+                    stepSymbol = [NSMutableString stringWithFormat:@"%@%@", @"♭", @"♭"];
+            }
+            else // means str is empty
+                stepSymbol = [NSMutableString stringWithString:@"♭"];
             break;
         case 8:
             // ♯ button was pressed
-            newTitle = [newTitle stringByAppendingString:@"♯"];
+            if([stepSymbol length] == 2) // means str is either 𝄪 or 𝄫
+            {
+                if([[NSString stringWithFormat:@"%C", [stepSymbol characterAtIndex:0]] isEqualToString: @"♭"]) // remove one, or do nothing
+                    stepSymbol = [NSMutableString stringWithString:@"♭"];
+            }
+            else if([stepSymbol length] == 1) // means str has a single half-step symbol
+            {
+                if([[NSString stringWithFormat:@"%C", [stepSymbol characterAtIndex:0]] isEqualToString: @"♭"]) // remove ♭, or add ♯
+                    stepSymbol = [NSMutableString stringWithString:@""];
+                else // add a ♯
+                    stepSymbol = [NSMutableString stringWithFormat:@"%@%@", @"♯", @"♯"];
+            }
+            else // means str is empty
+                stepSymbol = [NSMutableString stringWithString:@"♯"];
             break;
         case 9:
             // CLR button was pressed
-            newTitle = @"";
+            note = [NSMutableString stringWithString:@""];
+            stepSymbol = [NSMutableString stringWithString:@""];
             break;
         default:
             break;
     }
     
-    [[inputTileArray objectAtIndex:userInputTileEnabled] setTitle:newTitle forState:UIControlStateNormal];
+    [[inputTileArray objectAtIndex:userInputTileEnabled] setTitle:[NSMutableString stringWithFormat:@"%@%@", note, stepSymbol] forState:UIControlStateNormal];
     [[inputTileArray objectAtIndex:userInputTileEnabled] setNeedsDisplay];
+}
+
+- (IBAction)submitClicked:(id)sender
+{
+    NSArray *answer = [chordDictionary getNotes:currentChordRoot chordType:currentChordType];
+    bool correctAns = YES;
+    int index = 0;
+    
+    while (index < [answer count] && correctAns)
+    {
+        correctAns = [[answer objectAtIndex:index] isEqualToString:[[[inputTileArray objectAtIndex:index] titleLabel] text]];
+        
+        NSLog(@"Answer %d: %@", index, [answer objectAtIndex:index]);
+        NSLog(@"Entered %d: %@", index, [[[inputTileArray objectAtIndex:index] titleLabel] text]);
+        index++;
+    }
+
+    // TEMP: Display answer
+    NSString *ans = @"";
+    for(int k = 0; k < [answer count]; k++)
+    {
+        ans = [NSString stringWithFormat:@"%@%@", ans, [answer objectAtIndex:k]];
+        NSLog(@"++: %@",  ans);
+    }
+    
+    answerLabel.text = ans;
+    
+    if(correctAns)
+    {
+        // correct!
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Correct!"
+                              message: @"Those are the right notes."
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        // incorrect
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Incorrect!"
+                              message: @"Sorry, please try again."
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)inputTileClicked:(UserInputButton *)sender
 {
     userInputTileEnabled = sender.tag;
     
+    for(int i = 0; i < [inputTileArray count]; i++)
+    {
+        [[inputTileArray objectAtIndex:i] setEnabled:YES];
+    }
+    
     switch (userInputTileEnabled) {
         case 0:
             [inputTile_0 setEnabled:NO];
-            [inputTile_1 setEnabled:YES];
-            [inputTile_2 setEnabled:YES];
-            [inputTile_3 setEnabled:YES];
-            [inputTile_4 setEnabled:YES];
             break;
         case 1:
-            [inputTile_0 setEnabled:YES];
             [inputTile_1 setEnabled:NO];
-            [inputTile_2 setEnabled:YES];
-            [inputTile_3 setEnabled:YES];
-            [inputTile_4 setEnabled:YES];
             break;
         case 2:
-            [inputTile_0 setEnabled:YES];
-            [inputTile_1 setEnabled:YES];
             [inputTile_2 setEnabled:NO];
-            [inputTile_3 setEnabled:YES];
-            [inputTile_4 setEnabled:YES];
             break;
         case 3:
-            [inputTile_0 setEnabled:YES];
-            [inputTile_1 setEnabled:YES];
-            [inputTile_2 setEnabled:YES];
             [inputTile_3 setEnabled:NO];
-            [inputTile_4 setEnabled:YES];
             break;
         case 4:
-            [inputTile_0 setEnabled:YES];
-            [inputTile_1 setEnabled:YES];
-            [inputTile_2 setEnabled:YES];
-            [inputTile_3 setEnabled:YES];
             [inputTile_4 setEnabled:NO];
             break;
         default:
@@ -291,11 +373,16 @@
 
 - (void)resetTiles
 {
-    [inputTile_0 removeFromSuperview];
-    [inputTile_1 removeFromSuperview];
-    [inputTile_2 removeFromSuperview];
-    [inputTile_3 removeFromSuperview];
-    [inputTile_4 removeFromSuperview];
+    for(int i = 0; i < [inputTileArray count]; i++)
+    {
+        [[inputTileArray objectAtIndex:i] removeFromSuperview];
+        [[inputTileArray objectAtIndex:i] setTitle:@"" forState:UIControlStateNormal];
+        [[inputTileArray objectAtIndex:i] setEnabled:YES];
+        [[inputTileArray objectAtIndex:i] setNeedsDisplay];
+    }
+    
+    // reset userInputTileEnabled to the leftmost
+    userInputTileEnabled = 0;
 }
 
 @end

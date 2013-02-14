@@ -33,6 +33,7 @@
 		7792939116AB1C0700DC0715 /* QuizzesMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939016AB1C0700DC0715 /* QuizzesMainViewController.m */; };
 		7792939416AB1E0600DC0715 /* NoteNamingQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939316AB1E0600DC0715 /* NoteNamingQuizViewController.m */; };
 		7792939716AD094A00DC0715 /* UserInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939616AD094900DC0715 /* UserInputButton.m */; };
+		77BB27BC16CA22D0005C2C95 /* ChordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BB27BB16CA22D0005C2C95 /* ChordDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		7792939316AB1E0600DC0715 /* NoteNamingQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteNamingQuizViewController.m; sourceTree = "<group>"; };
 		7792939516AD094900DC0715 /* UserInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInputButton.h; sourceTree = "<group>"; };
 		7792939616AD094900DC0715 /* UserInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputButton.m; sourceTree = "<group>"; };
+		77BB27BA16CA22CF005C2C95 /* ChordDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordDictionary.h; sourceTree = "<group>"; };
+		77BB27BB16CA22D0005C2C95 /* ChordDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				4DB5A0761671FFC1004276C0 /* Chords.m */,
 				4DB5A07816720201004276C0 /* BackEndDictionary.h */,
 				4DB5A07916720201004276C0 /* BackEndDictionary.m */,
+				77BB27BA16CA22CF005C2C95 /* ChordDictionary.h */,
+				77BB27BB16CA22D0005C2C95 /* ChordDictionary.m */,
 				7792938916A9D31C00DC0715 /* Rand.h */,
 				7792938A16A9D31D00DC0715 /* Rand.m */,
 				7792939516AD094900DC0715 /* UserInputButton.h */,
@@ -331,6 +336,7 @@
 				7792939116AB1C0700DC0715 /* QuizzesMainViewController.m in Sources */,
 				7792939416AB1E0600DC0715 /* NoteNamingQuizViewController.m in Sources */,
 				7792939716AD094A00DC0715 /* UserInputButton.m in Sources */,
+				77BB27BC16CA22D0005C2C95 /* ChordDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

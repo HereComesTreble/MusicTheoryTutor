@@ -15,16 +15,17 @@
 
 - (id)init
 {
-    TILE_HEIGHT = 60.0f;
-    TILE_WIDTH = 40.0f;
+    TILE_HEIGHT = 43.0f;
+    TILE_WIDTH = 58.0f;
     
     CGRect frame = CGRectMake(0.0f, 0.0f, TILE_WIDTH, TILE_HEIGHT);
-    
     self = [super initWithFrame:frame];
+    
     if (self) {
         // Initialization code
         [self setTitle:@"" forState:UIControlStateNormal];
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        self.titleLabel.font = [UIFont fontWithName:@"Helvetica-Oblique" size:20.0];
         
         [[self layer] setCornerRadius:5.0f];
         [[self layer] setShadowRadius:10.0f];
@@ -34,22 +35,12 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        
-    }
-    return self;
-}
-
 - (id)initWithPosition:(float)x y:(float)y;
 {
     m_x = x;
     m_y = y;
-    TILE_HEIGHT = 60.0f;
-    TILE_WIDTH = 40.0f;
+    TILE_HEIGHT = 43.0f;
+    TILE_WIDTH = 58.0f;
     
     CGRect frame = CGRectMake(m_x, m_y, TILE_WIDTH, TILE_HEIGHT);
     self = [super initWithFrame:frame];
@@ -58,7 +49,8 @@
         // initialize any code here
         [self setTitle:@"" forState:UIControlStateNormal];
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
+        self.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:22.0];
+               
         [[self layer] setCornerRadius:5.0f];
         [[self layer] setShadowRadius:10.0f];
         [[self layer] setBorderWidth:1.0f];

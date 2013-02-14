@@ -17,25 +17,25 @@
     if(self =[super init])
     {
         // initialize arrays
-        notes = [NSArray arrayWithObjects:@"A#", @"A", @"Ab", @"B#", @"B", @"Bb", @"C#", @"C", @"Cb", @"D#", @"D", @"Db", @"E#", @"E", @"Eb", @"F#", @"F", @"Fb", @"G#", @"G", @"Gb", nil];
+        notes = [NSArray arrayWithObjects:@"A♯", @"A", @"A♭", @"B♯", @"B", @"B♭", @"C♯", @"C", @"C♭", @"D♯", @"D", @"D♭", @"E♯", @"E", @"E♭", @"F♯", @"F", @"F♭", @"G♯", @"G", @"G♭", nil];
   
-        abbrNames3 = [NSArray arrayWithObjects:@"M", @"b5", @"m", @"dim", @"aug", @"sus2", @"sus4", @"5", nil];
+        abbrNames3 = [NSArray arrayWithObjects:@"M", @"♭5", @"m", @"dim", @"aug", @"sus2", @"sus4", @"5", nil];
         
-        abbrNames4 = [NSArray arrayWithObjects:@"M7", @"M7sus2", @"M7sus4", @"M7#5", @"M7b5", @"6", @"b6", @"add4", @"add9", @"7", @"7sus2", @"7sus4", @"7#5", @"7b5", @"m7", @"m/M7", @"madd4", @"madd9", @"mb6", @"m6", @"m7b5", @"dim7", nil];
+        abbrNames4 = [NSArray arrayWithObjects:@"M7", @"M7sus2", @"M7sus4", @"M7♯5", @"M7♭5", @"6", @"♭6", @"add4", @"add9", @"7", @"7sus2", @"7sus4", @"7♯5", @"7♭5", @"m7", @"m/M7", @"madd4", @"madd9", @"m♭6", @"m6", @"m7♭5", @"dim7", nil];
         
-        abbrNames5 = [NSArray arrayWithObjects:@"6add9", @"m6add9", @"9", @"9b5", @"9#5", @"m9", @"m9b5", @"M9", @"M9sus4", @"M7b9", @"7add6", @"m/M9", @"m/Mb9", @"7#9", @"7b5#9", @"7b9", @"m7b9", @"m7#9", nil];
+        abbrNames5 = [NSArray arrayWithObjects:@"6add9", @"m6add9", @"9", @"9♭5", @"9♯5", @"m9", @"m9♭5", @"M9", @"M9sus4", @"M7♭9", @"7add6", @"m/M9", @"m/M♭9", @"7♯9", @"7♭5♯9", @"7♭9", @"m7♭9", @"m7♯9", nil];
     }
     
     return self;
 }
 
-- (NSString *)getRandomNote
+- (NSMutableString *)getRandomNote
 {
     // get random number within array's range    
     return notes[(arc4random() % [notes count])];
 }
     
-- (NSString *) getRandomName:(BOOL)three four:(BOOL)four five:(BOOL)five
+- (NSMutableString *) getRandomChordType:(BOOL)three four:(BOOL)four five:(BOOL)five
 {		
 		if (three && !four && !five)
         {
@@ -43,7 +43,7 @@
         }
 		else if (!three && four && !five)
 		{
-            return abbrNames5[(arc4random() % [abbrNames5 count])];
+            return abbrNames4[(arc4random() % [abbrNames4 count])];
         }
         else if (!three && !four && five)
         {

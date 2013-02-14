@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Rand.h"
+#import "ChordDictionary.h"
 #import "UserInputButton.h"
 
 @interface ChordNamingQuizViewController : UIViewController
 {
     Rand *randomGenerator;
-
+    ChordDictionary *chordDictionary;
     
     UserInputButton *inputTile_0;
     UserInputButton *inputTile_1;
@@ -34,13 +35,17 @@
 @property (strong, nonatomic) NSArray *inputTileArray;
 @property (nonatomic) float TILE_Y;
 @property (nonatomic) int userInputTileEnabled;
+@property (nonatomic) NSMutableString *currentChordRoot;
+@property (nonatomic) NSMutableString *currentChordType;
+@property (strong, nonatomic) IBOutlet UILabel *answerLabel;
 
-- (IBAction)getNewNote;
+- (IBAction)getNewChord;
 - (IBAction)settingsButtonClicked;
 - (IBAction)changeMode:(id)sender;
 - (IBAction)userInputTileClickes:(UserInputButton *)sender;
 - (IBAction)handleUserInput:(UserInputButton *)sender;
-- (void)setupInputTiles;
+- (IBAction)submitClicked:(id)sender;
+- (IBAction)setupInputTiles;
 - (void)resetTiles;
 
 @end
