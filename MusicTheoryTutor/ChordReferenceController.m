@@ -7,6 +7,7 @@
 //
 
 #import "ChordReferenceController.h"
+#import "BackEndDictionary.h"
 
 @interface ChordReferenceController ()
 
@@ -15,7 +16,7 @@
 @implementation ChordReferenceController
 
 
-@synthesize buttonA, buttonB, buttonC, buttonD, buttonE,buttonF, buttonG, buttonsharp, buttonflat, buttonSubmit;
+@synthesize buttonA, buttonB, buttonC, buttonD, buttonE,buttonF, buttonG, buttonsharp, buttonflat, buttonSubmit, tableviewarray, root, name, notes, chordName, intervals, signature;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,40 +27,37 @@
     return self;
 }
 
-- (void)openChordRefView
-{
-    
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSArray *temparray = [NSMutableArray arrayWithObjects:@"M", @"♭ 5", @"m", @"dim", @"aug",@"sus2", @"sus4", @"5", nil];
     
-    
-    
-    //NSArray *array = [NSArray arrayWithObjects:
-    pickerArray = [[NSMutableArray alloc] init];
-    
-    [pickerArray addObject:@"Blue"];
-    [pickerArray addObject:@"Red"];
-    
-    [pickerView selectRow:0 inComponent:0 animated:NO];
-    //view loaded
+    tableviewarray = temparray;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [pickerArray count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [tableviewarray count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView     titleForHeaderInSection:(NSInteger)section {
-    return [pickerArray objectAtIndex:section];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SimpleTableIdentifier"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"SimpleTableIdentifier"];
+        
+    }
+    
+    cell.textLabel.text = [tableviewarray objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section     {
-    return [pickerArray count];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableviewarray objectAtIndex:indexPath.row];
+    
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -71,34 +69,100 @@
 - (IBAction)buttonClicked:(id)sender {
     UIButton *b = (UIButton *)sender;
     
-    NSString *r,*n;
+    NSString *r,*n, *temp;
     
+    //gotta get the text of the current root and set the first char if it's a letter and the second if it's a #/b
     
     switch (b.tag) {
         case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        case 5:
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        case 8:
-            break;
-        case 9:
-            break;
-        case 10:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"A"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
             break;
             
-        default:
+        case 2:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"B"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
+            break;
+        case 3:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"C"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
+            break;
+        case 4:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"D"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
+            break;
+        case 5:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"E"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
+            break;
+        case 6:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"F"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
+            break;
+        case 7:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"G"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
+            break;
+        case 8:
+            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            r = [NSMutableString stringWithString:@"A"];
+            r = [r stringByAppendingString:temp];
+            [root setText:r];
+            break;
+        case 9:
+            
+            if([r substringWithRange:NSMakeRange(1, 1)] == @"♭") {
+            }
+            else if ([r substringWithRange:NSMakeRange(1, 1)] == @"♯") {
+                    r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 0)]];
+                    r = [r stringByAppendingString:@" "];
+                    [root setText:r];
+            }
+            else {
+                r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 0)]];
+                r = [r stringByAppendingString:@"♭"];
+                [root setText:r];
+            }
+            
+            break;
+        case 10:
+            if([r substringWithRange:NSMakeRange(1, 1)] == @"♯") {
+            }
+            else if ([r substringWithRange:NSMakeRange(1, 1)] == @"♭") {
+                r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 0)]];
+                r = [r stringByAppendingString:@" "];
+                [root setText:r];
+            }
+            else {
+                r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 0)]];
+                r = [r stringByAppendingString:@"♯"];
+                [root setText:r];
+            }
             break;
     }
+    
+    BackEndDictionary *D = [[BackEndDictionary alloc] init];
+    temp = @"Name: ";
+    temp = [temp stringByAppendingString:r];
+    temp = [temp stringByAppendingString:@" "];
+    temp = [temp stringByAppendingString:[D getName:n]];
+    [chordName setText:temp];
+    temp = @"Notes: ";
+    temp = [temp stringByAppendingString:[D getNotes:r secondString:n]];
     
     
     NSLog(@"Button pressed: %@", [sender currentTitle]);

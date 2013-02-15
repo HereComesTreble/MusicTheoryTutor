@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChordReferenceController : UIViewController<UIPickerViewDelegate>
+@interface ChordReferenceController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
+    NSArray *tableviewarray;
+}
+
 
 @property (nonatomic, strong) IBOutlet UIButton *buttonA;
 @property (nonatomic, strong) IBOutlet UIButton *buttonB;
@@ -21,10 +24,16 @@
 @property (nonatomic, strong) IBOutlet UIButton *buttonsharp;
 @property (nonatomic, strong) IBOutlet UIButton *buttonSubmit;
 
+@property (nonatomic, strong) IBOutlet UILabel *root;
+@property (nonatomic, strong) IBOutlet UILabel *name;
+@property (nonatomic, strong) IBOutlet UILabel *notes;
+@property (nonatomic, strong) IBOutlet UILabel *chordName;
+@property (nonatomic, strong) IBOutlet UILabel *signature;
+@property (nonatomic, strong) IBOutlet UILabel *intervals;
+
+
+@property (nonatomic, retain) NSArray *tableviewarray;
+
 
 
 @end
-
-NSMutableArray *pickerArray;
-IBOutlet UIPickerView *pickerView;
-IBOutlet UILabel *label;
