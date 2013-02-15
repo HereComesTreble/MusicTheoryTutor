@@ -37,6 +37,7 @@
 }
 
 -(id)init;
+-(NSMutableString *)getName: (NSMutableString *)chord;
 -(NSArray *)getNotes: (NSMutableString *)chordRoot chordType: (NSMutableString*)chordType;
 -(Chords *)findChord: (NSMutableString *)chordType;
 -(NSInteger)getNum:(NSMutableString*)chordType;

@@ -484,7 +484,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="KoH-6A-fMV"/>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="dGd-ny-g30"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QJT-Pu-I1k">
@@ -499,7 +499,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="flr-wf-UOc"/>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="fKI-Sm-8q8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yub-ea-kgA">
@@ -514,7 +514,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="R2r-bN-V7R"/>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="DOQ-0e-NaM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8IC-Hf-scH">
@@ -544,7 +544,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="eOW-GT-9zU"/>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="aLa-d1-vPf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DNM-OK-oOp">
@@ -559,7 +559,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="LcA-AP-aGr"/>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="GLY-wL-Lvw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EGe-uF-4RG">
@@ -574,7 +574,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="S34-ce-Dk0"/>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="jBP-OH-8aQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Fy-St-1lF">
@@ -589,7 +589,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchDragInside" id="F1Y-nZ-xOa"/>
+                                    <action selector="buttonClicked:" destination="JFC-i0-KBR" eventType="touchUpInside" id="xZj-Ft-DRR"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="plZ-Oo-OKu">
@@ -716,11 +716,14 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChordNamingQuizViewController.h"/>
             <relationships>
                 <relationship kind="action" name="changeMode:"/>
-                <relationship kind="action" name="getNewNote"/>
+                <relationship kind="action" name="getNewChord"/>
                 <relationship kind="action" name="handleUserInput:" candidateClass="UserInputButton"/>
                 <relationship kind="action" name="onTouchup:"/>
                 <relationship kind="action" name="settingsButtonClicked"/>
+                <relationship kind="action" name="setupInputTiles"/>
+                <relationship kind="action" name="submitClicked:"/>
                 <relationship kind="action" name="userInputTileClickes:" candidateClass="UserInputButton"/>
+                <relationship kind="outlet" name="answerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="calloutView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="fiveNoteChordButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fourNoteChordButton" candidateClass="UIButton"/>

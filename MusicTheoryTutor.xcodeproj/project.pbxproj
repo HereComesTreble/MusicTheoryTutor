@@ -10,7 +10,6 @@
 		4DA3C97C166C28B200F1AA3C /* ChordReferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3C97B166C28B200F1AA3C /* ChordReferenceController.m */; };
 		4DA3C980166C2BB200F1AA3C /* ChordNamingQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3C97F166C2BB200F1AA3C /* ChordNamingQuizViewController.m */; };
 		4DB5A0771671FFC1004276C0 /* Chords.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5A0761671FFC1004276C0 /* Chords.m */; };
-		4DB5A07A16720201004276C0 /* BackEndDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5A07916720201004276C0 /* BackEndDictionary.m */; };
 		4DF961851665502E00FC0762 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961841665502E00FC0762 /* UIKit.framework */; };
 		4DF961871665502E00FC0762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961861665502E00FC0762 /* Foundation.framework */; };
 		4DF961891665502E00FC0762 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF961881665502E00FC0762 /* CoreGraphics.framework */; };
@@ -53,8 +52,6 @@
 		4DA3C97F166C2BB200F1AA3C /* ChordNamingQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordNamingQuizViewController.m; sourceTree = "<group>"; };
 		4DB5A0751671FFC1004276C0 /* Chords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chords.h; sourceTree = "<group>"; };
 		4DB5A0761671FFC1004276C0 /* Chords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chords.m; sourceTree = "<group>"; };
-		4DB5A07816720201004276C0 /* BackEndDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackEndDictionary.h; sourceTree = "<group>"; };
-		4DB5A07916720201004276C0 /* BackEndDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackEndDictionary.m; sourceTree = "<group>"; };
 		4DF961801665502E00FC0762 /* MusicTheoryTutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTheoryTutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF961841665502E00FC0762 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DF961861665502E00FC0762 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,8 +163,6 @@
 				7792939316AB1E0600DC0715 /* NoteNamingQuizViewController.m */,
 				4DB5A0751671FFC1004276C0 /* Chords.h */,
 				4DB5A0761671FFC1004276C0 /* Chords.m */,
-				4DB5A07816720201004276C0 /* BackEndDictionary.h */,
-				4DB5A07916720201004276C0 /* BackEndDictionary.m */,
 				77BB27BA16CA22CF005C2C95 /* ChordDictionary.h */,
 				77BB27BB16CA22D0005C2C95 /* ChordDictionary.m */,
 				7792938916A9D31C00DC0715 /* Rand.h */,
@@ -331,7 +326,6 @@
 				4DA3C97C166C28B200F1AA3C /* ChordReferenceController.m in Sources */,
 				4DA3C980166C2BB200F1AA3C /* ChordNamingQuizViewController.m in Sources */,
 				4DB5A0771671FFC1004276C0 /* Chords.m in Sources */,
-				4DB5A07A16720201004276C0 /* BackEndDictionary.m in Sources */,
 				7792938B16A9D31D00DC0715 /* Rand.m in Sources */,
 				7792939116AB1C0700DC0715 /* QuizzesMainViewController.m in Sources */,
 				7792939416AB1E0600DC0715 /* NoteNamingQuizViewController.m in Sources */,
