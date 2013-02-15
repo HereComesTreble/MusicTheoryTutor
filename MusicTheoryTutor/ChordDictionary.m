@@ -30,7 +30,7 @@
                                     Third:@"perfect 5th"
                               intervalOne:0
                               intervalTwo:4
-                            intervalThree:6
+                            intervalThree:7
                                       Num:3];
         
         Flattened5th = [[Chords alloc] initThree:@"Flattened 5th"
