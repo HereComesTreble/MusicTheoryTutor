@@ -35,8 +35,13 @@
 		77BB27BC16CA22D0005C2C95 /* ChordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BB27BB16CA22D0005C2C95 /* ChordDictionary.m */; };
 		BE3D789D16D010A200899F75 /* Three_note_Chord_Flat5Power.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3D789C16D010A200899F75 /* Three_note_Chord_Flat5Power.m */; };
 		BE3D78A616D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3D78A516D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m */; };
+		BE3D78A916D19B2000899F75 /* Four_note_Chord_Major7Minor7.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3D78A816D19B1F00899F75 /* Four_note_Chord_Major7Minor7.m */; };
+		BE3D78B216D1DD1B00899F75 /* Four_note_Chord_HalfDiminished_FullyDiminished.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3D78B116D1DD1B00899F75 /* Four_note_Chord_HalfDiminished_FullyDiminished.m */; };
+		BE69188116D73DC400187ADD /* Four_note_Chord_6th_MajorFlat6.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69188016D73DC400187ADD /* Four_note_Chord_6th_MajorFlat6.m */; };
 		BEB0D37F16CEDC880081188B /* Three_note_Chord_MajorMinor.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0D37E16CEDC880081188B /* Three_note_Chord_MajorMinor.m */; };
 		BEB0D38716CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0D38616CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.m */; };
+		BEE9EE9C16D693E900886C14 /* Four_note_Chord_Major7_suspended_2_4.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE9EE9B16D693E900886C14 /* Four_note_Chord_Major7_suspended_2_4.m */; };
+		BEE9EEA516D699A900886C14 /* Four_note_Chord_Major7_augmented5_flattened5.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE9EEA416D699A800886C14 /* Four_note_Chord_Major7_augmented5_flattened5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,10 +100,20 @@
 		BE3D789C16D010A200899F75 /* Three_note_Chord_Flat5Power.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three_note_Chord_Flat5Power.m; sourceTree = "<group>"; };
 		BE3D78A416D027AC00899F75 /* Three_note_Chord_Suspended_2_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Three_note_Chord_Suspended_2_4.h; sourceTree = "<group>"; };
 		BE3D78A516D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three_note_Chord_Suspended_2_4.m; sourceTree = "<group>"; };
+		BE3D78A716D19B1F00899F75 /* Four_note_Chord_Major7Minor7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Four_note_Chord_Major7Minor7.h; sourceTree = "<group>"; };
+		BE3D78A816D19B1F00899F75 /* Four_note_Chord_Major7Minor7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Four_note_Chord_Major7Minor7.m; sourceTree = "<group>"; };
+		BE3D78B016D1DD1B00899F75 /* Four_note_Chord_HalfDiminished_FullyDiminished.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Four_note_Chord_HalfDiminished_FullyDiminished.h; sourceTree = "<group>"; };
+		BE3D78B116D1DD1B00899F75 /* Four_note_Chord_HalfDiminished_FullyDiminished.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Four_note_Chord_HalfDiminished_FullyDiminished.m; sourceTree = "<group>"; };
+		BE69187F16D73DC400187ADD /* Four_note_Chord_6th_MajorFlat6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Four_note_Chord_6th_MajorFlat6.h; sourceTree = "<group>"; };
+		BE69188016D73DC400187ADD /* Four_note_Chord_6th_MajorFlat6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Four_note_Chord_6th_MajorFlat6.m; sourceTree = "<group>"; };
 		BEB0D37D16CEDC880081188B /* Three_note_Chord_MajorMinor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Three_note_Chord_MajorMinor.h; sourceTree = "<group>"; };
 		BEB0D37E16CEDC880081188B /* Three_note_Chord_MajorMinor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three_note_Chord_MajorMinor.m; sourceTree = "<group>"; };
 		BEB0D38516CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Three_note_Chord_DiminishedAugmented.h; sourceTree = "<group>"; };
 		BEB0D38616CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three_note_Chord_DiminishedAugmented.m; sourceTree = "<group>"; };
+		BEE9EE9A16D693E900886C14 /* Four_note_Chord_Major7_suspended_2_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Four_note_Chord_Major7_suspended_2_4.h; sourceTree = "<group>"; };
+		BEE9EE9B16D693E900886C14 /* Four_note_Chord_Major7_suspended_2_4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Four_note_Chord_Major7_suspended_2_4.m; sourceTree = "<group>"; };
+		BEE9EEA316D699A800886C14 /* Four_note_Chord_Major7_augmented5_flattened5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Four_note_Chord_Major7_augmented5_flattened5.h; sourceTree = "<group>"; };
+		BEE9EEA416D699A800886C14 /* Four_note_Chord_Major7_augmented5_flattened5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Four_note_Chord_Major7_augmented5_flattened5.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,16 +219,17 @@
 		4DF961B11665502E00FC0762 /* MusicTheoryTutorTests */ = {
 			isa = PBXGroup;
 			children = (
-				4DF961B71665502E00FC0762 /* MusicTheoryTutorTests.h */,
-				4DF961B81665502E00FC0762 /* MusicTheoryTutorTests.m */,
-				BEB0D37D16CEDC880081188B /* Three_note_Chord_MajorMinor.h */,
-				BEB0D37E16CEDC880081188B /* Three_note_Chord_MajorMinor.m */,
-				BEB0D38516CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.h */,
-				BEB0D38616CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.m */,
-				BE3D789B16D010A200899F75 /* Three_note_Chord_Flat5Power.h */,
-				BE3D789C16D010A200899F75 /* Three_note_Chord_Flat5Power.m */,
-				BE3D78A416D027AC00899F75 /* Three_note_Chord_Suspended_2_4.h */,
-				BE3D78A516D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m */,
+				BEE9EEA616D699E200886C14 /* 3 note chords */,
+				BE3D78A716D19B1F00899F75 /* Four_note_Chord_Major7Minor7.h */,
+				BE3D78A816D19B1F00899F75 /* Four_note_Chord_Major7Minor7.m */,
+				BEE9EE9A16D693E900886C14 /* Four_note_Chord_Major7_suspended_2_4.h */,
+				BEE9EE9B16D693E900886C14 /* Four_note_Chord_Major7_suspended_2_4.m */,
+				BEE9EEA316D699A800886C14 /* Four_note_Chord_Major7_augmented5_flattened5.h */,
+				BEE9EEA416D699A800886C14 /* Four_note_Chord_Major7_augmented5_flattened5.m */,
+				BE69187F16D73DC400187ADD /* Four_note_Chord_6th_MajorFlat6.h */,
+				BE69188016D73DC400187ADD /* Four_note_Chord_6th_MajorFlat6.m */,
+				BE3D78B016D1DD1B00899F75 /* Four_note_Chord_HalfDiminished_FullyDiminished.h */,
+				BE3D78B116D1DD1B00899F75 /* Four_note_Chord_HalfDiminished_FullyDiminished.m */,
 				4DF961B21665502E00FC0762 /* Supporting Files */,
 			);
 			path = MusicTheoryTutorTests;
@@ -226,6 +242,23 @@
 				4DF961B41665502E00FC0762 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEE9EEA616D699E200886C14 /* 3 note chords */ = {
+			isa = PBXGroup;
+			children = (
+				4DF961B71665502E00FC0762 /* MusicTheoryTutorTests.h */,
+				4DF961B81665502E00FC0762 /* MusicTheoryTutorTests.m */,
+				BEB0D37D16CEDC880081188B /* Three_note_Chord_MajorMinor.h */,
+				BEB0D37E16CEDC880081188B /* Three_note_Chord_MajorMinor.m */,
+				BEB0D38516CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.h */,
+				BEB0D38616CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.m */,
+				BE3D789B16D010A200899F75 /* Three_note_Chord_Flat5Power.h */,
+				BE3D789C16D010A200899F75 /* Three_note_Chord_Flat5Power.m */,
+				BE3D78A416D027AC00899F75 /* Three_note_Chord_Suspended_2_4.h */,
+				BE3D78A516D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m */,
+			);
+			name = "3 note chords";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +396,11 @@
 				BEB0D38716CEE1E20081188B /* Three_note_Chord_DiminishedAugmented.m in Sources */,
 				BE3D789D16D010A200899F75 /* Three_note_Chord_Flat5Power.m in Sources */,
 				BE3D78A616D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m in Sources */,
+				BE3D78A916D19B2000899F75 /* Four_note_Chord_Major7Minor7.m in Sources */,
+				BE3D78B216D1DD1B00899F75 /* Four_note_Chord_HalfDiminished_FullyDiminished.m in Sources */,
+				BEE9EE9C16D693E900886C14 /* Four_note_Chord_Major7_suspended_2_4.m in Sources */,
+				BEE9EEA516D699A900886C14 /* Four_note_Chord_Major7_augmented5_flattened5.m in Sources */,
+				BE69188116D73DC400187ADD /* Four_note_Chord_6th_MajorFlat6.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

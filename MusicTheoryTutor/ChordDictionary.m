@@ -348,7 +348,7 @@
                                intervalFour:9
                                         num:4];
         
-        HalfDiminished7th = [[Chords alloc] initFour:@"Half Diminished 7th"
+        HalfDiminished7th = [[Chords alloc] initFour:@"Half Diminished 7th" 
                                           AbbrevName:@"m7♭5"
                                                First:@"root"
                                               Second:@"Minor 3rd"
