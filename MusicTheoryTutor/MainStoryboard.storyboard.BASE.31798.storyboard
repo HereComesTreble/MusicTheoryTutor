@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -128,315 +128,12 @@
         <scene sceneID="jyS-Ma-4pI">
             <objects>
                 <viewController id="ooc-mu-bLk" customClass="NoteNamingQuizViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cuq-X1-3VY">
+                    <view key="view" contentMode="scaleToFill" id="hf4-Uf-FSV">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" id="VqK-CV-g55">
-                                <rect key="frame" x="233" y="89" width="84" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Get New Note">
-                                            <attributes>
-                                                <color key="NSColor" red="0.24387820505564328" green="0.56205417798913038" blue="0.24500704450925095" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.060000002384185791"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="getNewNote" destination="ooc-mu-bLk" eventType="touchUpInside" id="1jN-zm-Vle"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AdE-9k-R5M">
-                                <rect key="frame" x="20" y="39" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b1Z-pz-vKt">
-                                <rect key="frame" x="12" y="157" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="A">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="FQX-jb-FAe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZK9-sU-oGu">
-                                <rect key="frame" x="65" y="157" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="B"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="B">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="geN-Li-1MM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hrg-dN-CUv">
-                                <rect key="frame" x="118" y="157" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="C"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="C">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="GXQ-zp-rLi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8e2-t2-3mN">
-                                <rect key="frame" x="12" y="209" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="D"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="D">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="GNS-Pa-8VP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qhc-3c-uPx">
-                                <rect key="frame" x="118" y="209" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="F"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="F">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="P3D-nR-Y7h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h1X-nr-OcD">
-                                <rect key="frame" x="12" y="260" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="G"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="G">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="Tr5-bJ-vcg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mdN-qg-Yyl">
-                                <rect key="frame" x="65" y="260" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="flat"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="♭">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="4vS-9T-git"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fS5-HZ-GuH">
-                                <rect key="frame" x="118" y="260" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="sharp"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="♯">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="cAu-9q-qFb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SSu-lm-GSe">
-                                <rect key="frame" x="12" y="362" width="151" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="submit"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitClicked:" destination="ooc-mu-bLk" eventType="touchUpInside" id="adQ-an-Oxo"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" id="dQg-Rz-9B9" userLabel="View - Callout View">
-                                <rect key="frame" x="169" y="0.0" width="156" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="CalloutView.png" id="Txd-wN-mQb">
-                                        <rect key="frame" x="31" y="0.0" width="119" height="131"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ggf-b3-l48">
-                                        <rect key="frame" x="45" y="25" width="93" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="Triad">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleModeChange:" destination="ooc-mu-bLk" eventType="touchUpInside" id="6TB-wO-8sH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ubd-P9-voB">
-                                        <rect key="frame" x="45" y="58" width="93" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="4 Note Chords">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleModeChange:" destination="ooc-mu-bLk" eventType="touchUpInside" id="L8O-UP-0w2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B94-0x-3GF">
-                                        <rect key="frame" x="45" y="91" width="93" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="5 Note Chords">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleModeChange:" destination="ooc-mu-bLk" eventType="touchUpInside" id="0CB-gC-bRS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l2d-1m-qCZ">
-                                <rect key="frame" x="65" y="209" width="45" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="E">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="FoN-6t-7Jf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eAS-ul-NJ8">
-                                <rect key="frame" x="12" y="311" width="57" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="C"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="CLR">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleUserInput:" destination="ooc-mu-bLk" eventType="touchUpInside" id="v2f-Ds-bRc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Idx-np-YH8">
-                                <rect key="frame" x="72" y="311" width="91" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="C"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="CLR ALL">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="setupInputTiles" destination="ooc-mu-bLk" eventType="touchUpInside" id="ifY-Q8-Us8"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PIS-Xi-JCQ">
-                                <rect key="frame" x="20" y="128" width="143" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oJe-pG-bhy">
-                                <rect key="frame" x="169" y="157" width="148" height="248"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ooc-mu-bLk" id="LZd-4c-a0F"/>
-                                    <outlet property="delegate" destination="ooc-mu-bLk" id="VAL-iV-WqR"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2oU-jP-JWJ">
-                        <barButtonItem key="rightBarButtonItem" title="Mode" id="MxQ-N0-M38">
-                            <connections>
-                                <action selector="settingsButtonClicked" destination="ooc-mu-bLk" id="Jm6-fA-JGw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="answerLabel" destination="PIS-Xi-JCQ" id="eeC-iO-8Ib"/>
-                        <outlet property="calloutView" destination="dQg-Rz-9B9" id="6R0-Ky-XU7"/>
-                        <outlet property="currentNoteLabel" destination="AdE-9k-R5M" id="SeY-Aw-aHe"/>
-                        <outlet property="fiveNoteChordButton" destination="B94-0x-3GF" id="o8B-np-siq"/>
-                        <outlet property="fourNoteChordButton" destination="ubd-P9-voB" id="ljH-GV-y72"/>
-                        <outlet property="settingsButton" destination="MxQ-N0-M38" id="xRz-wP-gfs"/>
-                        <outlet property="triadButton" destination="ggf-b3-l48" id="yZN-ZI-PsB"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="2oU-jP-JWJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NW6-dz-4qV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -639,7 +336,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="handleModeChange:" destination="tyi-jv-pcn" eventType="touchUpInside" id="SMW-La-LrO"/>
+                                            <action selector="onTouchup:" destination="tyi-jv-pcn" eventType="touchUpInside" id="zxu-i1-Qbo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aRx-ku-kTd">
@@ -654,7 +351,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="handleModeChange:" destination="tyi-jv-pcn" eventType="touchUpInside" id="c3g-VS-VJy"/>
+                                            <action selector="onTouchup:" destination="tyi-jv-pcn" eventType="touchUpInside" id="0LZ-xV-8So"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tu0-L2-shr">
@@ -669,7 +366,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="handleModeChange:" destination="tyi-jv-pcn" eventType="touchUpInside" id="IcX-cx-LIX"/>
+                                            <action selector="onTouchup:" destination="tyi-jv-pcn" eventType="touchUpInside" id="kzE-YP-2PZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -741,9 +438,9 @@
                     <connections>
                         <outlet property="answerLabel" destination="qeH-QZ-Bdv" id="At2-b9-TX2"/>
                         <outlet property="calloutView" destination="385-M2-Ulu" id="Be7-PY-Hgy"/>
-                        <outlet property="currentChordLabel" destination="pvK-P4-Hk2" id="BqL-4W-Vas"/>
                         <outlet property="fiveNoteChordButton" destination="tu0-L2-shr" id="mfZ-PU-47b"/>
                         <outlet property="fourNoteChordButton" destination="aRx-ku-kTd" id="SW1-eN-ro9"/>
+                        <outlet property="quizNote" destination="pvK-P4-Hk2" id="sIh-E2-iKs"/>
                         <outlet property="settingsButton" destination="obL-nD-Nw3" id="Wf5-yt-gBg"/>
                         <outlet property="triadButton" destination="VfR-Wc-cUM" id="tgG-ZR-FEa"/>
                     </connections>
@@ -926,7 +623,7 @@
                                 <rect key="frame" x="172" y="216" width="148" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="JFC-i0-KBR" id="DZf-CC-M2L"/>
+                                    <outlet property="dataSource" destination="JFC-i0-KBR" id="fGl-AP-de5"/>
                                     <outlet property="delegate" destination="JFC-i0-KBR" id="x8s-xl-WQy"/>
                                 </connections>
                             </tableView>
@@ -952,14 +649,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fzn-9t-GnT">
-                                <rect key="frame" x="6" y="49" width="210" height="21"/>
+                                <rect key="frame" x="6" y="49" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GQq-ue-vKz">
-                                <rect key="frame" x="6" y="78" width="212" height="21"/>
+                                <rect key="frame" x="6" y="78" width="54" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -986,8 +683,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SignaturesAns" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zbc-ES-H4v">
-                                <rect key="frame" x="6" y="165" width="158" height="91"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SignaturesAns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zbc-ES-H4v">
+                                <rect key="frame" x="105" y="136" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1018,17 +715,19 @@
         <class className="ChordNamingQuizViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChordNamingQuizViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changeMode:"/>
                 <relationship kind="action" name="getNewChord"/>
-                <relationship kind="action" name="handleModeChange:"/>
                 <relationship kind="action" name="handleUserInput:" candidateClass="UserInputButton"/>
+                <relationship kind="action" name="onTouchup:"/>
                 <relationship kind="action" name="settingsButtonClicked"/>
                 <relationship kind="action" name="setupInputTiles"/>
                 <relationship kind="action" name="submitClicked:"/>
+                <relationship kind="action" name="userInputTileClickes:" candidateClass="UserInputButton"/>
                 <relationship kind="outlet" name="answerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="calloutView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="currentChordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fiveNoteChordButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fourNoteChordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="quizNote" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="triadButton" candidateClass="UIButton"/>
             </relationships>
@@ -1036,6 +735,7 @@
         <class className="ChordReferenceController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChordReferenceController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonClicked:"/>
                 <relationship kind="outlet" name="buttonA" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonB" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonC" candidateClass="UIButton"/>
@@ -1056,21 +756,6 @@
         </class>
         <class className="NoteNamingQuizViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteNamingQuizViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="getNewNote"/>
-                <relationship kind="action" name="handleModeChange:"/>
-                <relationship kind="action" name="handleUserInput:" candidateClass="UIButton"/>
-                <relationship kind="action" name="settingsButtonClicked"/>
-                <relationship kind="action" name="setupInputTiles"/>
-                <relationship kind="action" name="submitClicked:"/>
-                <relationship kind="outlet" name="answerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="calloutView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="currentNoteLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fiveNoteChordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fourNoteChordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="triadButton" candidateClass="UIButton"/>
-            </relationships>
         </class>
         <class className="QuizzesMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizzesMainViewController.h"/>

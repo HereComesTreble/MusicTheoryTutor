@@ -75,21 +75,24 @@
     NSMutableString * chordRoot = [NSMutableString stringWithString: @"A"];
     NSMutableString * chordType = [NSMutableString stringWithString: @"M"]; 
     NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    NSString *strAttempt = @"";
     
     int index =0;
     bool correctAns=YES;
-    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A", @"C♯", @"E", nil];
+    NSArray * keyAnswer = [NSArray arrayWithObjects:@"B", @"C♯", @"E", nil];
+    
     
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        strAttempt = [NSString stringWithFormat:@"%@%@", strAttempt, [NSString stringWithString: [attempt objectAtIndex:index]]];
         index++;
     }
     
     if(!correctAns)//correctAnws=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed A Major: A-C♯-E");
+        STFail(@"A maj: A-C♯-E  Atpt: %@", strAttempt);
     }
     
     

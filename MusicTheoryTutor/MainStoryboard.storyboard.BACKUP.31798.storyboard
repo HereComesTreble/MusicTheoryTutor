@@ -1014,6 +1014,8 @@
     <resources>
         <image name="CalloutView.png" width="386" height="342"/>
     </resources>
+<<<<<<< HEAD
+=======
     <classes>
         <class className="ChordNamingQuizViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChordNamingQuizViewController.h"/>
@@ -1079,6 +1081,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserInputButton.h"/>
         </class>
     </classes>
+>>>>>>> Ryan's-Branch
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -16,7 +16,7 @@
 
 @implementation ChordNamingQuizViewController
 
-@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, quizNote, inputTileArray, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled, currentChordRoot, currentChordType, answerLabel;
+@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, currentChordLabel, inputTileArray, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled, currentChordRoot, currentChordType, answerLabel;
 
 - (void)viewDidLoad
 {
@@ -44,7 +44,7 @@
 {
     [super viewWillAppear:YES];
     
-    // set new note
+    // set new chord
     [self getNewChord];
     
     // hide mode callout view
@@ -62,7 +62,7 @@
                                                       four:fourNoteChordIsEnabled
                                                       five:fiveNoteChordIsEnabled];
     
-    [quizNote setText: [NSMutableString stringWithFormat:@"%@ %@", currentChordRoot, currentChordType]];
+    [currentChordLabel setText: [NSMutableString stringWithFormat:@"%@ %@", currentChordRoot, currentChordType]];
     [self setupInputTiles];
 }
 
@@ -84,7 +84,7 @@
     }
 }
 
-- (IBAction)onTouchup:(id)sender
+- (IBAction)handleModeChange:(id)sender
 {
     [self performSelector:@selector(changeMode:) withObject:sender afterDelay:0.0];
 }
