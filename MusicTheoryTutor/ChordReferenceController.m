@@ -37,9 +37,14 @@ ChordDictionary * chordDictionary;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSArray *temparray = [NSMutableArray arrayWithObjects:@"M", @"♭ 5", @"m", @"dim", @"aug",@"sus2", @"sus4", @"5", nil];
+    tableviewarray = [NSMutableArray arrayWithObjects:@"M", @"♭5", @"m", @"dim", @"aug",@"sus2", @"sus4", @"5", @"M7", @"M7sus2", @"M7sus4", @"M7♯5", @"M7♭5", @"6", @"♭6", @"add4", @"add9", @"7", @"7sus2", @"7sus4", @"7♯5", @"7♭5", @"m7", @"m/M7", @"madd4", @"madd9", @"m♭6", @"m6", @"m7♭5", @"dim7", nil];
     
-    tableviewarray = temparray;
+//    tableviewarray = temparray;
+    
+    n = [NSMutableString stringWithString:@" "];
+    r = [NSMutableString stringWithString:@" "];
+    
+    [root setText:@"A"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -61,14 +66,8 @@ ChordDictionary * chordDictionary;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell * selectedCell = [tableviewarray objectAtIndex:indexPath.row];
+    NSString * cellText = [tableviewarray objectAtIndex:indexPath.row];
     
-    UILabel* cellText = selectedCell.textLabel;
-    
-    NSString * cellTexttext = [NSString stringWithString: cellText.text];
-    
-    //NSString * cellText = selectedCell.textLabel.text;
-    /*
     NSMutableString * temp;
     
     n = [NSMutableString stringWithString:cellText];
@@ -84,12 +83,70 @@ ChordDictionary * chordDictionary;
     NSArray *answer = [chordDictionary getNotes:r chordType:n];
     NSString * ans = @"";
     for(int i=0; i<[answer count]; i++) {
-        ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
+        if(i != ([answer count] -1)){
+            ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
+            ans = [ans stringByAppendingString:@"-"];
+        }
+        else ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
     }
     [notes setText:ans];
     
-    */
-    
+    NSMutableString * tempsig = [NSMutableString stringWithString:@""];
+    NSMutableString * tempint = [NSMutableString stringWithString:@""];
+    if ([chordDictionary getNum:n] == 3) {
+        [tempsig appendString:@"1. Root\n2. "];
+        [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+        [tempsig appendString:@"\n3. "];
+        [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+        
+        [tempint appendString:@"0, "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+        [tempint appendString:@", "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+        
+        [signature setText:tempsig];
+        [intervals setText:tempint];
+    }
+    else if ([chordDictionary getNum:n] == 4) {
+        [tempsig appendString:@"1. Root\n2. "];
+        [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+        [tempsig appendString:@"\n3. "];
+        [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+        [tempsig appendString:@"\n4. "];
+        [tempsig appendString:[chordDictionary getIntervalFourStr:n]];
+        
+        [tempint appendString:@"0, "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+        [tempint appendString:@", "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+        [tempint appendString:@", "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFourInt:n]]];
+        
+        [signature setText:tempsig];
+        [intervals setText:tempint];
+    }
+    else {
+        [tempsig appendString:@"1. Root\n2. "];
+        [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+        [tempsig appendString:@"\n3. "];
+        [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+        [tempsig appendString:@"\n4. "];
+        [tempsig appendString:[chordDictionary getIntervalFourStr:n]];
+        [tempsig appendString:@"\n5. "];
+        [tempsig appendString:[chordDictionary getIntervalFiveStr:n]];
+        
+        [tempint appendString:@"0, "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+        [tempint appendString:@", "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+        [tempint appendString:@", "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFourInt:n]]];
+        [tempint appendString:@", "];
+        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFiveInt:n]]];
+        
+        [signature setText:tempsig];
+        [intervals setText:tempint];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,87 +160,121 @@ ChordDictionary * chordDictionary;
 
 - (IBAction)buttonClicked:(id)sender {
     UIButton *b = (UIButton *)sender;
-    
+        
     NSMutableString *temp;
     
     //gotta get the text of the current root and set the first char if it's a letter and the second if it's a #/b
     
     switch (b.tag) {
         case 1:
-            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            if([[root text] length] < 2) {
+                temp = [NSMutableString stringWithString:@""];
+            }
+            else {
+                temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            }
+            
             r = [NSMutableString stringWithString:@"A"];
             [r appendString:temp];
             [root setText:r];
             break;
             
         case 2:
-            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            if([[root text] length] < 2) {
+                temp = [NSMutableString stringWithString:@""];
+            }
+            else {
+                temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            }
             r = [NSMutableString stringWithString:@"B"];
             [r appendString:temp];
             [root setText:r];
             break;
         case 3:
-            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            if([[root text] length] < 2) {
+                temp = [NSMutableString stringWithString:@""];
+            }
+            else {
+                temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            }
             r = [NSMutableString stringWithString:@"C"];
             [r appendString:temp];
             [root setText:r];
             break;
         case 4:
-            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            if([[root text] length] < 2) {
+                temp = [NSMutableString stringWithString:@""];
+            }
+            else {
+                temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            }
             r = [NSMutableString stringWithString:@"D"];
             [r appendString:temp];
             [root setText:r];
             break;
         case 5:
-            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            if([[root text] length] < 2) {
+                temp = [NSMutableString stringWithString:@""];
+            }
+            else {
+                temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            }
             r = [NSMutableString stringWithString:@"E"];
             [r appendString:temp];
             [root setText:r];
             break;
         case 6:
-            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            if([[root text] length] < 2) {
+                temp = [NSMutableString stringWithString:@""];
+            }
+            else {
+                temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            }
             r = [NSMutableString stringWithString:@"F"];
             [r appendString:temp];
             [root setText:r];
             break;
         case 7:
-            temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            if([[root text] length] < 2) {
+                temp = [NSMutableString stringWithString:@""];
+            }
+            else {
+                temp = [NSMutableString stringWithString:[[root text] substringWithRange:NSMakeRange(1, 1)]];
+            }
             r = [NSMutableString stringWithString:@"G"];
             [r appendString:temp];
             [root setText:r];
             break;
         case 8:
-            
-            if([[r substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"♭"]) {
-            }
-            else if ([[r substringWithRange:NSMakeRange(1, 1)] isEqualToString: @"♯"]) {
-                    r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 1)]];
-                    [r appendString:@" "];
-                    [root setText:r];
-            }
-            else {
+            if([r length]<2) {
                 r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 1)]];
                 [r appendString:@"♭"];
                 [root setText:r];
+            } else if([[r substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"♭"]) {
+                
             }
-            
+            else if ([[r substringWithRange:NSMakeRange(1, 1)] isEqualToString: @"♯"]) {
+                    r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 1)]];
+                    //[r appendString:@" "];
+                    [root setText:r];
+            }
             break;
         case 9:
-            if([[r substringWithRange:NSMakeRange(1, 1)] isEqualToString: @"♯"]) {
+            if([r length]<2) {
+                r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 1)]];
+                [r appendString:@"♯"];
+                [root setText:r];
+            } else if([[r substringWithRange:NSMakeRange(1, 1)] isEqualToString: @"♯"]) {
+                
             }
             else if ([[r substringWithRange:NSMakeRange(1, 1)] isEqualToString: @"♭"]) {
                 r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 1)]];
-                [r appendString:@" "];
-                [root setText:r];
-            }
-            else {
-                r = [NSMutableString stringWithString:[r substringWithRange:NSMakeRange(0, 1)]];
-                [r appendString:@"♯"];
+                //[r appendString:@" "];
                 [root setText:r];
             }
             break;
     }
-    if(n == nil)
+    if([n isEqualToString:@" "])
     {
         return;
     }
@@ -201,9 +292,71 @@ ChordDictionary * chordDictionary;
         NSArray *answer = [chordDictionary getNotes:r chordType:n];
         NSString * ans = @"";
         for(int i=0; i<[answer count]; i++) {
-            ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
+            if(i != ([answer count] -1)){
+                ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
+                ans = [ans stringByAppendingString:@"-"];
+            }
+            else ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
         }
         [notes setText:ans];
+        
+        NSMutableString * tempsig = [NSMutableString stringWithString:@""];
+        NSMutableString * tempint = [NSMutableString stringWithString:@""];
+        if ([chordDictionary getNum:n] == 3) {
+            [tempsig appendString:@"1. Root\n2. "];
+            [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+            [tempsig appendString:@"\n3. "];
+            [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+            
+            [tempint appendString:@"0, "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+            [tempint appendString:@", "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+            
+            [signature setText:tempsig];
+            [intervals setText:tempint];
+        }
+        else if ([chordDictionary getNum:n] == 4) {
+            [tempsig appendString:@"1. Root\n2. "];
+            [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+            [tempsig appendString:@"\n3. "];
+            [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+            [tempsig appendString:@"\n4. "];
+            [tempsig appendString:[chordDictionary getIntervalFourStr:n]];
+            
+            [tempint appendString:@"0, "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+            [tempint appendString:@", "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+            [tempint appendString:@", "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFourInt:n]]];
+            
+            [signature setText:tempsig];
+            [intervals setText:tempint];
+        }
+        else {
+            //tempsig = [NSMutableString stringWithString:"@%@%@%@%", @"1. Root\n2. ", ]
+            [tempsig appendString:@"1. Root\n2. "];
+            [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+            [tempsig appendString:@"\n3. "];
+            [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+            [tempsig appendString:@"\n4. "];
+            [tempsig appendString:[chordDictionary getIntervalFourStr:n]];
+            [tempsig appendString:@"\n5. "];
+            [tempsig appendString:[chordDictionary getIntervalFiveStr:n]];
+            
+            [tempint appendString:@"0, "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+            [tempint appendString:@", "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+            [tempint appendString:@", "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFourInt:n]]];
+            [tempint appendString:@", "];
+            [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFiveInt:n]]];
+            
+            [signature setText:tempsig];
+            [intervals setText:tempint];
+        }
     }
 }
 

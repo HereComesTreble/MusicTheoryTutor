@@ -687,6 +687,10 @@
  */
 -(NSMutableString *)getName: (NSMutableString *)chord
 {
+    return [self findChord:chord]->name;
+}
+-(NSMutableString *)getAbbrName: (NSMutableString *)chord
+{
     return [self findChord:chord]->abbrName;
 }
 
@@ -851,6 +855,31 @@
     }
     
     return nil;
+}
+
+-(NSMutableString *)getIntervalTwoStr: (NSMutableString *)chord {
+    return [NSMutableString stringWithString:[self findChord:chord]->second];
+}
+-(NSMutableString *)getIntervalThreeStr: (NSMutableString *)chord {
+    return [NSMutableString stringWithString:[self findChord:chord]->third];
+}
+-(NSMutableString *)getIntervalFourStr: (NSMutableString *)chord {
+    return [NSMutableString stringWithString:[self findChord:chord]->fourth];
+}
+-(NSMutableString *)getIntervalFiveStr: (NSMutableString *)chord {
+    return [NSMutableString stringWithString:[self findChord:chord]->fifth];
+}
+-(int)getIntervalTwoInt: (NSMutableString *)chord {
+    return [self findChord:chord]->intervalTwo;
+}
+-(int)getIntervalThreeInt: (NSMutableString *)chord {
+    return [self findChord:chord]->intervalThree;
+}
+-(int)getIntervalFourInt: (NSMutableString *)chord {
+    return [self findChord:chord]->intervalFour;
+}
+-(int)getIntervalFiveInt: (NSMutableString *)chord {
+    return [self findChord:chord]->intervalFive;
 }
 
 @end

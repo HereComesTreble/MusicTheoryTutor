@@ -38,8 +38,22 @@
 
 -(id)init;
 -(NSMutableString *)getName: (NSMutableString *)chord;
+-(NSMutableString *)getAbbrName: (NSMutableString *)chord;
 -(NSArray *)getNotes: (NSMutableString *)chordRoot chordType: (NSMutableString*)chordType;
 -(Chords *)findChord: (NSMutableString *)chordType;
 -(NSInteger)getNum:(NSMutableString*)chordType;
+-(NSMutableString *)getIntervalTwoStr: (NSMutableString *)chord;
+-(NSMutableString *)getIntervalThreeStr: (NSMutableString *)chord;
+-(NSMutableString *)getIntervalFourStr: (NSMutableString *)chord;
+-(NSMutableString *)getIntervalFiveStr: (NSMutableString *)chord;
+-(int)getIntervalTwoInt: (NSMutableString *)chord;
+-(int)getIntervalThreeInt: (NSMutableString *)chord;
+-(int)getIntervalFourInt: (NSMutableString *)chord;
+-(int)getIntervalFiveInt: (NSMutableString *)chord;
+
+
+
+
+
 
 @end
