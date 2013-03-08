@@ -16,11 +16,10 @@
 @implementation ChordReferenceController
 
 
-@synthesize buttonA, buttonB, buttonC, buttonD, buttonE,buttonF, buttonG, buttonsharp, buttonflat, buttonSubmit, tableviewarray, root, name, notes, chordName, intervals, signature;
+@synthesize buttonA, buttonB, buttonC, buttonD, buttonE,buttonF, buttonG, buttonsharp, buttonflat, buttonSubmit, tableviewarray, root, name, notes, chordName, intervals, signature, displayedTableView;
 
 NSMutableString *n = nil;
 NSMutableString *r = nil;
-
 
 ChordDictionary * chordDictionary;
 
@@ -37,14 +36,19 @@ ChordDictionary * chordDictionary;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    tableviewarray = [NSMutableArray arrayWithObjects:@"M", @"♭5", @"m", @"dim", @"aug",@"sus2", @"sus4", @"5", @"M7", @"M7sus2", @"M7sus4", @"M7♯5", @"M7♭5", @"6", @"♭6", @"add4", @"add9", @"7", @"7sus2", @"7sus4", @"7♯5", @"7♭5", @"m7", @"m/M7", @"madd4", @"madd9", @"m♭6", @"m6", @"m7♭5", @"dim7", nil];
-    
-//    tableviewarray = temparray;
-    
+    tableviewarray = [NSArray arrayWithObjects:
+                      // 3 note chords
+                      @"M", @"♭5", @"m", @"dim", @"aug",@"sus2", @"sus4", @"5",
+                      //4 note chords
+                      @"M7", @"M7sus2", @"M7sus4", @"M7♯5", @"M7♭5", @"6", @"♭6", @"add4", @"add9", @"7", @"7sus2", @"7sus4", @"7♯5", @"7♭5", @"m7", @"m/M7", @"madd4", @"madd9", @"m♭6", @"m6", @"m7♭5", @"dim7",
+                      // 5 note chords
+                      @"6add9", @"m6add9", @"9", @"9♭5", @"9♯5", @"m9", @"m9♭5", @"M9", @"M9sus4", @"M7♭9", @"7add6", @"m/M9", @"m/M♭9", @"7♯9", @"7♭5♯9", @"7♭9", @"m7♭9", @"m7♯9", nil];
+        
     n = [NSMutableString stringWithString:@" "];
-    r = [NSMutableString stringWithString:@" "];
-    
-    [root setText:@"A"];
+    r = [NSMutableString stringWithString:@"A"];
+        
+    self.displayedTableView.layer.borderWidth = 1;
+    self.displayedTableView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -359,6 +363,5 @@ ChordDictionary * chordDictionary;
         }
     }
 }
-
 
 @end

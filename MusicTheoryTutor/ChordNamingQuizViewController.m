@@ -16,7 +16,7 @@
 
 @implementation ChordNamingQuizViewController
 
-@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, currentChordLabel, inputTileArray, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled, currentChordRoot, currentChordType, answerLabel;
+@synthesize modeButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, currentChordLabel, inputTileArray, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled, currentChordRoot, currentChordType, answerLabel;
 
 - (void)viewDidLoad
 {
@@ -64,13 +64,15 @@
     
     [currentChordLabel setText: [NSMutableString stringWithFormat:@"%@ %@", currentChordRoot, currentChordType]];
     [self setupInputTiles];
+    
+    answerLabel.text = @"";
 }
 
-- (void)settingsButtonClicked
+- (void)modeButtonClicked
 {
-    (settingsButton.style == UIBarButtonItemStyleBordered) ? [settingsButton setStyle:UIBarButtonItemStyleDone] : [settingsButton setStyle:UIBarButtonItemStyleBordered];
+    (modeButton.style == UIBarButtonItemStyleBordered) ? [modeButton setStyle:UIBarButtonItemStyleDone] : [modeButton setStyle:UIBarButtonItemStyleBordered];
     
-    if (settingsButton.style == UIBarButtonItemStyleDone)
+    if (modeButton.style == UIBarButtonItemStyleDone)
     {
         // fade-in view
         [UIView beginAnimations:@"callout fade in" context:nil];
@@ -116,6 +118,7 @@
 - (void)setupInputTiles
 {
     [self resetTiles];
+    answerLabel.text = @"";
     
     float spacer = 5.0f;
     float tileViewWidth;
@@ -281,6 +284,7 @@
             break;
         case 9:
             // CLR button was pressed
+            answerLabel.text = @"";
             note = [NSMutableString stringWithString:@""];
             stepSymbol = [NSMutableString stringWithString:@""];
             break;
@@ -306,16 +310,6 @@
         NSLog(@"Entered %d: %@", index, [[[inputTileArray objectAtIndex:index] titleLabel] text]);
         index++;
     }
-
-    // TEMP: Display answer
-    NSString *ans = @"";
-    for(int k = 0; k < [answer count]; k++)
-    {
-        ans = [NSString stringWithFormat:@"%@%@", ans, [answer objectAtIndex:k]];
-        NSLog(@"++: %@",  ans);
-    }
-    
-    answerLabel.text = ans;
     
     if(correctAns)
     {
@@ -339,6 +333,24 @@
                               otherButtonTitles:nil];
         [alert show];
     }
+}
+
+- (IBAction)showAnswer:(id)sender {
+    NSArray *answer = [chordDictionary getNotes:currentChordRoot chordType:currentChordType];
+    
+    if([[answerLabel text] isEqualToString:@""]) {
+        answerLabel.text = @"Answer: ";
+        for(int k = 0; k < [answer count]; k++) {
+            answerLabel.text = [NSString stringWithFormat:@"%@ %@", [answerLabel text], [answer objectAtIndex:k]];
+        
+//            if(k + 1 < [answer count])
+//                answerLabel.text = [NSString stringWithFormat:@"%@-", [answerLabel text]];
+        }
+    }
+    else {
+           answerLabel.text = @"";
+    }
+       
 }
 
 - (void)inputTileClicked:(UserInputButton *)sender

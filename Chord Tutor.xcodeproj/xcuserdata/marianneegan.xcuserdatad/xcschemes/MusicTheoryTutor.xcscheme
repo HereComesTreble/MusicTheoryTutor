@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DF9617F1665502E00FC0762"
                BuildableName = "MusicTheoryTutor.app"
-               BlueprintName = "MusicTheoryTutor"
-               ReferencedContainer = "container:MusicTheoryTutor.xcodeproj">
+               BlueprintName = "Chord Tutor"
+               ReferencedContainer = "container:Chord Tutor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DF961A91665502E00FC0762"
                BuildableName = "MusicTheoryTutorTests.octest"
-               BlueprintName = "MusicTheoryTutorTests"
-               ReferencedContainer = "container:MusicTheoryTutor.xcodeproj">
+               BlueprintName = "Chord TutorTests"
+               ReferencedContainer = "container:Chord Tutor.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DF9617F1665502E00FC0762"
             BuildableName = "MusicTheoryTutor.app"
-            BlueprintName = "MusicTheoryTutor"
-            ReferencedContainer = "container:MusicTheoryTutor.xcodeproj">
+            BlueprintName = "Chord Tutor"
+            ReferencedContainer = "container:Chord Tutor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DF9617F1665502E00FC0762"
             BuildableName = "MusicTheoryTutor.app"
-            BlueprintName = "MusicTheoryTutor"
-            ReferencedContainer = "container:MusicTheoryTutor.xcodeproj">
+            BlueprintName = "Chord Tutor"
+            ReferencedContainer = "container:Chord Tutor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DF9617F1665502E00FC0762"
             BuildableName = "MusicTheoryTutor.app"
-            BlueprintName = "MusicTheoryTutor"
-            ReferencedContainer = "container:MusicTheoryTutor.xcodeproj">
+            BlueprintName = "Chord Tutor"
+            ReferencedContainer = "container:Chord Tutor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

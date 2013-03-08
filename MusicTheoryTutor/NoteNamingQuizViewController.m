@@ -1,3 +1,4 @@
+// TODO: Only show chord type for corresponding chord, i.e. 3, 4, or 5 note chords.
 //
 //  ChordNamingQuizViewController.m
 //  MusicTheoryTutor
@@ -8,13 +9,16 @@
 
 #import "NoteNamingQuizViewController.h"
 
+
 @interface NoteNamingQuizViewController ()
 
 @end
 
 @implementation NoteNamingQuizViewController
 
-@synthesize settingsButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, currentNoteLabel, inputTileArray, currentNote, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled, currentChordRoot, currentChordType, answerLabel;
+@synthesize modeButton, calloutView, triadButton, fourNoteChordButton, fiveNoteChordButton, currentNoteLabel, inputTileArray, currentNote, TILE_Y, triadIsEnabled, fourNoteChordIsEnabled, fiveNoteChordIsEnabled, userInputTileEnabled, currentChordRoot, currentChordType, answerLabel;
+
+
 
 - (void)viewDidLoad
 {
@@ -22,7 +26,16 @@
     
     [self.navigationItem setTitle:@"Note Naming Quiz"];
     
-    TILE_Y = 130.0f;
+    // create tableview data
+    tableviewarray = [NSArray arrayWithObjects:
+                      // 3 note chords
+                      @"M", @"♭5", @"m", @"dim", @"aug",@"sus2", @"sus4", @"5",
+                      //4 note chords
+                      @"M7", @"M7sus2", @"M7sus4", @"M7♯5", @"M7♭5", @"6", @"♭6", @"add4", @"add9", @"7", @"7sus2", @"7sus4", @"7♯5", @"7♭5", @"m7", @"m/M7", @"madd4", @"madd9", @"m♭6", @"m6", @"m7♭5", @"dim7",
+                      // 5 note chords
+                      @"6add9", @"m6add9", @"9", @"9♭5", @"9♯5", @"m9", @"m9♭5", @"M9", @"M9sus4", @"M7♭9", @"7add6", @"m/M9", @"m/M♭9", @"7♯9", @"7♭5♯9", @"7♭9", @"m7♭9", @"m7♯9", nil];
+    
+    TILE_Y = 80.0f;
     randomGenerator = [Rand new];
     chordDictionary = [ChordDictionary new];
     
@@ -33,9 +46,9 @@
     
     inputTile_0 = [[UserInputButton alloc] init];
     inputTile_1 = [[UserInputButton alloc] init];
-    inputTile_2 = [[UserInputButton alloc] init];
-    inputTile_3 = [[UserInputButton alloc] init];
-    inputTile_4 = [[UserInputButton alloc] init];
+    
+    self.tableView.layer.borderWidth = 1;
+    self.tableView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -54,6 +67,9 @@
 
 - (void)getNewNote
 {
+    // deselect table view cell, if any
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    
     currentChordRoot = [randomGenerator getRandomNote];
     
     currentChordType = [randomGenerator getRandomChordType:triadIsEnabled
@@ -71,14 +87,20 @@
     }
     [currentNoteLabel setText: textForLabel];
     [self setupInputTiles];
+    
+    
 }
 
-- (void)settingsButtonClicked
+- (void)modeButtonClicked
 {
-    (settingsButton.style == UIBarButtonItemStyleBordered) ? [settingsButton setStyle:UIBarButtonItemStyleDone] : [settingsButton setStyle:UIBarButtonItemStyleBordered];
+    (modeButton.style == UIBarButtonItemStyleBordered) ? [modeButton setStyle:UIBarButtonItemStyleDone] : [modeButton setStyle:UIBarButtonItemStyleBordered];
     
-    if (settingsButton.style == UIBarButtonItemStyleDone)
+    if (modeButton.style == UIBarButtonItemStyleDone)
     {
+        [calloutView removeFromSuperview];
+        [self.view addSubview:calloutView];
+        [[UIApplication sharedApplication].keyWindow bringSubviewToFront:calloutView];
+        
         // fade-in view
         [UIView beginAnimations:@"callout fade in" context:nil];
         [UIView setAnimationDuration:0.2];
@@ -124,39 +146,19 @@
 {
     [self resetTiles];
     
-    float spacer = 5.0f;
-    float tileViewWidth;
+    // deselect table view cell, if any
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     
-    switch ((int)[chordDictionary getNum:currentChordType]) {
-        case 3:
-            tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + (spacer * 2.0f);
-            [inputTile_0 changePosition:(315.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
-            [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
-            [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
-            
-            inputTileArray  = [NSArray arrayWithObjects:inputTile_0, inputTile_1, inputTile_2, nil];
-            break;
-        case 4:
-            tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + (spacer * 3.0f);
-            [inputTile_0 changePosition:(315.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
-            [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
-            [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
-            [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
-            
-            inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, nil];
-            break;
-        case 5:
-            tileViewWidth = [inputTile_0 TILE_WIDTH] + [inputTile_1 TILE_WIDTH] + [inputTile_2 TILE_WIDTH] + [inputTile_3 TILE_WIDTH] + [inputTile_4 TILE_WIDTH]+ (spacer * 3.0f);
-            [inputTile_0 changePosition:(315.0f / 2) - (tileViewWidth / 2) y:TILE_Y];
-            [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer y:TILE_Y];
-            [inputTile_2 changePosition:[inputTile_1 m_x] + [inputTile_1 TILE_WIDTH] + spacer y:TILE_Y];
-            [inputTile_3 changePosition:[inputTile_2 m_x] + [inputTile_2 TILE_WIDTH] + spacer y:TILE_Y];
-            [inputTile_4 changePosition:[inputTile_3 m_x] + [inputTile_3 TILE_WIDTH] + spacer y:TILE_Y];
-            inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, inputTile_2, inputTile_3, inputTile_4, nil];
-            break;
-        default:
-            break;
-    }
+    float spacer = 5.0f;
+    
+    [inputTile_0 changePosition:28 y:TILE_Y];
+    [inputTile_0 setFrame:CGRectMake([inputTile_0 m_x], TILE_Y, [inputTile_0 TILE_WIDTH] + 20.0f, [inputTile_0 TILE_HEIGHT])];
+    
+    [inputTile_1 changePosition:[inputTile_0 m_x] + [inputTile_0 TILE_WIDTH] + spacer + 20.0f y:TILE_Y];
+    [inputTile_1 setFrame:CGRectMake([inputTile_1 m_x], TILE_Y, [inputTile_1 TILE_WIDTH] + 20.0f, [inputTile_1 TILE_HEIGHT])];
+    
+    
+    inputTileArray = [[NSArray alloc] initWithObjects:inputTile_0, inputTile_1, nil];
     
     for (int i=0; i < [inputTileArray count]; i++)
     {
@@ -164,23 +166,19 @@
             [self.view addSubview:[inputTileArray objectAtIndex:i]];
     }
     
-    // enable/highlight first input tile
+    // enable/highlight both input tile
     [inputTile_0 setHighlighted:YES];
     [inputTile_0 setEnabled:NO];
+    [inputTile_1 setHighlighted:YES];
+    [inputTile_1 setEnabled:NO];
     
     // set tags for user input tiles
     [inputTile_0 setTag:0];
     [inputTile_1 setTag:1];
-    [inputTile_2 setTag:2];
-    [inputTile_3 setTag:3];
-    [inputTile_4 setTag:4];
     
     // create action events for user input tiles
     [inputTile_0 addTarget:self action:@selector(inputTileClicked:) forControlEvents:UIControlEventTouchUpInside];
     [inputTile_1 addTarget:self action:@selector(inputTileClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [inputTile_2 addTarget:self action:@selector(inputTileClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [inputTile_3 addTarget:self action:@selector(inputTileClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [inputTile_4 addTarget:self action:@selector(inputTileClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (IBAction)handleUserInput:(UIButton *)sender
@@ -288,6 +286,8 @@
             break;
         case 9:
             // CLR button was pressed
+            // deselect table view cell, if any
+            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
             note = [NSMutableString stringWithString:@""];
             stepSymbol = [NSMutableString stringWithString:@""];
             break;
@@ -314,22 +314,15 @@
         index++;
     }
     
-    // TEMP: Display answer
-    NSString *ans = @"";
-    for(int k = 0; k < [answer count]; k++)
-    {
-        ans = [NSString stringWithFormat:@"%@%@", ans, [answer objectAtIndex:k]];
-        NSLog(@"++: %@",  ans);
-    }
-    
-    answerLabel.text = ans;
+    correctAns = ([[[inputTile_0 titleLabel] text] isEqualToString:currentChordRoot]
+                  && [[[inputTile_1 titleLabel] text] isEqualToString:currentChordType]) ? YES : NO;
     
     if(correctAns)
     {
         // correct!
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle: @"Correct!"
-                              message: @"Those are the right notes."
+                              message: @"That is the right chord."
                               delegate: nil
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];
@@ -348,6 +341,13 @@
     }
 }
 
+- (IBAction)showAnswerClicked:(id)sender {
+    if([[answerLabel text] isEqualToString:@""])
+        answerLabel.text = [NSString stringWithFormat:@"Answer: %@ %@", currentChordRoot, currentChordType];
+    else
+        answerLabel.text = @"";
+}
+
 - (void)inputTileClicked:(UserInputButton *)sender
 {
     userInputTileEnabled = sender.tag;
@@ -363,15 +363,6 @@
             break;
         case 1:
             [inputTile_1 setEnabled:NO];
-            break;
-        case 2:
-            [inputTile_2 setEnabled:NO];
-            break;
-        case 3:
-            [inputTile_3 setEnabled:NO];
-            break;
-        case 4:
-            [inputTile_4 setEnabled:NO];
             break;
         default:
             break;
@@ -390,6 +381,122 @@
     
     // reset userInputTileEnabled to the leftmost
     userInputTileEnabled = 0;
+    
+    answerLabel.text = @"";
 }
+
+//
+// TableView Delegate Methods
+//
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [tableviewarray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SimpleTableIdentifier"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"SimpleTableIdentifier"];
+        
+    }
+    
+    cell.textLabel.text = [tableviewarray objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *textSelected = [tableviewarray objectAtIndex:indexPath.row];
+    
+    [inputTile_1 setTitle:textSelected forState:UIControlStateNormal];
+    [inputTile_1 setNeedsDisplay];
+    
+//    NSString * cellText = [tableviewarray objectAtIndex:indexPath.row];
+//    
+//    NSMutableString * temp;
+//
+//    n = [NSMutableString stringWithString:cellText];
+//    
+//    if(chordDictionary == nil)
+//        chordDictionary = [ChordDictionary new];
+//    temp = [NSMutableString stringWithString:@"Name: "];
+//    [temp appendString:r];
+//    [temp appendString:@" "];
+//    [temp appendString:[chordDictionary getName:n]];
+//    [chordName setText:temp];
+//    temp = [NSMutableString stringWithString:@"Notes: "];
+//    NSArray *answer = [chordDictionary getNotes:r chordType:n];
+//    NSString * ans = @"";
+//    for(int i=0; i<[answer count]; i++) {
+//        if(i != ([answer count] -1)){
+//            ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
+//            ans = [ans stringByAppendingString:@"-"];
+//        }
+//        else ans = [ans stringByAppendingString:[answer objectAtIndex:i]];
+//    }
+//    [notes setText:ans];
+//    
+//    NSMutableString * tempsig = [NSMutableString stringWithString:@""];
+//    NSMutableString * tempint = [NSMutableString stringWithString:@""];
+//    if ([chordDictionary getNum:n] == 3) {
+//        [tempsig appendString:@"1. Root\n2. "];
+//        [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+//        [tempsig appendString:@"\n3. "];
+//        [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+//        
+//        [tempint appendString:@"0, "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+//        [tempint appendString:@", "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+//        
+//        [signature setText:tempsig];
+//        [intervals setText:tempint];
+//    }
+//    else if ([chordDictionary getNum:n] == 4) {
+//        [tempsig appendString:@"1. Root\n2. "];
+//        [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+//        [tempsig appendString:@"\n3. "];
+//        [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+//        [tempsig appendString:@"\n4. "];
+//        [tempsig appendString:[chordDictionary getIntervalFourStr:n]];
+//        
+//        [tempint appendString:@"0, "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+//        [tempint appendString:@", "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+//        [tempint appendString:@", "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFourInt:n]]];
+//        
+//        [signature setText:tempsig];
+//        [intervals setText:tempint];
+//    }
+//    else {
+//        [tempsig appendString:@"1. Root\n2. "];
+//        [tempsig appendString:[chordDictionary getIntervalTwoStr:n]];
+//        [tempsig appendString:@"\n3. "];
+//        [tempsig appendString:[chordDictionary getIntervalThreeStr:n]];
+//        [tempsig appendString:@"\n4. "];
+//        [tempsig appendString:[chordDictionary getIntervalFourStr:n]];
+//        [tempsig appendString:@"\n5. "];
+//        [tempsig appendString:[chordDictionary getIntervalFiveStr:n]];
+//        
+//        [tempint appendString:@"0, "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalTwoInt:n]]];
+//        [tempint appendString:@", "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalThreeInt:n]]];
+//        [tempint appendString:@", "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFourInt:n]]];
+//        [tempint appendString:@", "];
+//        [tempint appendString:[NSString stringWithFormat:@"%i",[chordDictionary getIntervalFiveInt:n]]];
+//        
+//        [signature setText:tempsig];
+//        [intervals setText:tempint];
+//    }
+}
+
+
 
 @end

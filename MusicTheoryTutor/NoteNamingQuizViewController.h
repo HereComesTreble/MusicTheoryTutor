@@ -10,20 +10,21 @@
 #import "Rand.h"
 #import "ChordDictionary.h"
 #import "UserInputButton.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface NoteNamingQuizViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface NoteNamingQuizViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> 
 {
     Rand *randomGenerator;
     ChordDictionary *chordDictionary;
     
+    NSArray *tableviewarray;
+    
     UserInputButton *inputTile_0;
     UserInputButton *inputTile_1;
-    UserInputButton *inputTile_2;
-    UserInputButton *inputTile_3;
-    UserInputButton *inputTile_4;
 }
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *modeButton;
 @property (strong, nonatomic) IBOutlet UIView *calloutView;
 @property (strong, nonatomic) IBOutlet UIButton *triadButton;
 @property (strong, nonatomic) IBOutlet UIButton *fourNoteChordButton;
@@ -42,10 +43,11 @@
 
 
 - (IBAction)getNewNote;
-- (IBAction)settingsButtonClicked;
+- (IBAction)modeButtonClicked;
 - (IBAction)handleModeChange:(id)sender;
 - (IBAction)handleUserInput:(UIButton *)sender;
 - (IBAction)submitClicked:(id)sender;
+- (IBAction)showAnswerClicked:(id)sender;
 - (IBAction)setupInputTiles;
 - (void)resetTiles;
 

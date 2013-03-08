@@ -33,6 +33,8 @@
 		7792939416AB1E0600DC0715 /* NoteNamingQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939316AB1E0600DC0715 /* NoteNamingQuizViewController.m */; };
 		7792939716AD094A00DC0715 /* UserInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7792939616AD094900DC0715 /* UserInputButton.m */; };
 		77BB27BC16CA22D0005C2C95 /* ChordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BB27BB16CA22D0005C2C95 /* ChordDictionary.m */; };
+		77C0B71716E8E2ED006259A7 /* grandStaf_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C0B71616E8E2ED006259A7 /* grandStaf_57x57.png */; };
+		77C0B71916E8E2FF006259A7 /* grandStaff_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C0B71816E8E2FF006259A7 /* grandStaff_114x114.png */; };
 		BE3D789D16D010A200899F75 /* Three_note_Chord_Flat5Power.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3D789C16D010A200899F75 /* Three_note_Chord_Flat5Power.m */; };
 		BE3D78A616D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3D78A516D027AC00899F75 /* Three_note_Chord_Suspended_2_4.m */; };
 		BE3D78A916D19B2000899F75 /* Four_note_Chord_Major7Minor7.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3D78A816D19B1F00899F75 /* Four_note_Chord_Major7Minor7.m */; };
@@ -67,14 +69,14 @@
 		4DA3C97F166C2BB200F1AA3C /* ChordNamingQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordNamingQuizViewController.m; sourceTree = "<group>"; };
 		4DB5A0751671FFC1004276C0 /* Chords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chords.h; sourceTree = "<group>"; };
 		4DB5A0761671FFC1004276C0 /* Chords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chords.m; sourceTree = "<group>"; };
-		4DF961801665502E00FC0762 /* MusicTheoryTutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTheoryTutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF961801665502E00FC0762 /* Chord Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chord Tutor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF961841665502E00FC0762 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DF961861665502E00FC0762 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4DF961881665502E00FC0762 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4DF9618C1665502E00FC0762 /* MusicTheoryTutor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicTheoryTutor-Info.plist"; sourceTree = "<group>"; };
+		4DF9618C1665502E00FC0762 /* Chord Tutor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chord Tutor-Info.plist"; sourceTree = "<group>"; };
 		4DF9618E1665502E00FC0762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4DF961901665502E00FC0762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4DF961921665502E00FC0762 /* MusicTheoryTutor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicTheoryTutor-Prefix.pch"; sourceTree = "<group>"; };
+		4DF961921665502E00FC0762 /* Chord Tutor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chord Tutor-Prefix.pch"; sourceTree = "<group>"; };
 		4DF961931665502E00FC0762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4DF961941665502E00FC0762 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4DF961961665502E00FC0762 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -84,9 +86,9 @@
 		4DF961A01665502E00FC0762 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		4DF961A21665502E00FC0762 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4DF961A31665502E00FC0762 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		4DF961AA1665502E00FC0762 /* MusicTheoryTutorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicTheoryTutorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF961AA1665502E00FC0762 /* Chord TutorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chord TutorTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF961AB1665502E00FC0762 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4DF961B31665502E00FC0762 /* MusicTheoryTutorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicTheoryTutorTests-Info.plist"; sourceTree = "<group>"; };
+		4DF961B31665502E00FC0762 /* Chord TutorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chord TutorTests-Info.plist"; sourceTree = "<group>"; };
 		4DF961B51665502E00FC0762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4DF961B71665502E00FC0762 /* MusicTheoryTutorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicTheoryTutorTests.h; sourceTree = "<group>"; };
 		4DF961B81665502E00FC0762 /* MusicTheoryTutorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicTheoryTutorTests.m; sourceTree = "<group>"; };
@@ -102,6 +104,8 @@
 		7792939616AD094900DC0715 /* UserInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputButton.m; sourceTree = "<group>"; };
 		77BB27BA16CA22CF005C2C95 /* ChordDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordDictionary.h; sourceTree = "<group>"; };
 		77BB27BB16CA22D0005C2C95 /* ChordDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordDictionary.m; sourceTree = "<group>"; };
+		77C0B71616E8E2ED006259A7 /* grandStaf_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grandStaf_57x57.png; path = ../grandStaf_57x57.png; sourceTree = "<group>"; };
+		77C0B71816E8E2FF006259A7 /* grandStaff_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grandStaff_114x114.png; path = ../grandStaff_114x114.png; sourceTree = "<group>"; };
 		BE3D789B16D010A200899F75 /* Three_note_Chord_Flat5Power.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Three_note_Chord_Flat5Power.h; sourceTree = "<group>"; };
 		BE3D789C16D010A200899F75 /* Three_note_Chord_Flat5Power.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three_note_Chord_Flat5Power.m; sourceTree = "<group>"; };
 		BE3D78A416D027AC00899F75 /* Three_note_Chord_Suspended_2_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Three_note_Chord_Suspended_2_4.h; sourceTree = "<group>"; };
@@ -171,8 +175,8 @@
 		4DF961811665502E00FC0762 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DF961801665502E00FC0762 /* MusicTheoryTutor.app */,
-				4DF961AA1665502E00FC0762 /* MusicTheoryTutorTests.octest */,
+				4DF961801665502E00FC0762 /* Chord Tutor.app */,
+				4DF961AA1665502E00FC0762 /* Chord TutorTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,13 +227,15 @@
 			isa = PBXGroup;
 			children = (
 				777D570D16A939F200ED085C /* CalloutView.png */,
-				4DF9618C1665502E00FC0762 /* MusicTheoryTutor-Info.plist */,
+				4DF9618C1665502E00FC0762 /* Chord Tutor-Info.plist */,
 				4DF9618D1665502E00FC0762 /* InfoPlist.strings */,
 				4DF961901665502E00FC0762 /* main.m */,
-				4DF961921665502E00FC0762 /* MusicTheoryTutor-Prefix.pch */,
+				4DF961921665502E00FC0762 /* Chord Tutor-Prefix.pch */,
 				4DF961961665502E00FC0762 /* Default.png */,
 				4DF961981665502E00FC0762 /* Default@2x.png */,
 				4DF9619A1665502E00FC0762 /* Default-568h@2x.png */,
+				77C0B71816E8E2FF006259A7 /* grandStaff_114x114.png */,
+				77C0B71616E8E2ED006259A7 /* grandStaf_57x57.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -270,7 +276,7 @@
 		4DF961B21665502E00FC0762 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4DF961B31665502E00FC0762 /* MusicTheoryTutorTests-Info.plist */,
+				4DF961B31665502E00FC0762 /* Chord TutorTests-Info.plist */,
 				4DF961B41665502E00FC0762 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -294,9 +300,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4DF9617F1665502E00FC0762 /* MusicTheoryTutor */ = {
+		4DF9617F1665502E00FC0762 /* Chord Tutor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DF961BC1665502E00FC0762 /* Build configuration list for PBXNativeTarget "MusicTheoryTutor" */;
+			buildConfigurationList = 4DF961BC1665502E00FC0762 /* Build configuration list for PBXNativeTarget "Chord Tutor" */;
 			buildPhases = (
 				4DF9617C1665502E00FC0762 /* Sources */,
 				4DF9617D1665502E00FC0762 /* Frameworks */,
@@ -306,14 +312,14 @@
 			);
 			dependencies = (
 			);
-			name = MusicTheoryTutor;
+			name = "Chord Tutor";
 			productName = MusicTheoryTutor;
-			productReference = 4DF961801665502E00FC0762 /* MusicTheoryTutor.app */;
+			productReference = 4DF961801665502E00FC0762 /* Chord Tutor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4DF961A91665502E00FC0762 /* MusicTheoryTutorTests */ = {
+		4DF961A91665502E00FC0762 /* Chord TutorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DF961BF1665502E00FC0762 /* Build configuration list for PBXNativeTarget "MusicTheoryTutorTests" */;
+			buildConfigurationList = 4DF961BF1665502E00FC0762 /* Build configuration list for PBXNativeTarget "Chord TutorTests" */;
 			buildPhases = (
 				4DF961A51665502E00FC0762 /* Sources */,
 				4DF961A61665502E00FC0762 /* Frameworks */,
@@ -325,9 +331,9 @@
 			dependencies = (
 				4DF961B01665502E00FC0762 /* PBXTargetDependency */,
 			);
-			name = MusicTheoryTutorTests;
+			name = "Chord TutorTests";
 			productName = MusicTheoryTutorTests;
-			productReference = 4DF961AA1665502E00FC0762 /* MusicTheoryTutorTests.octest */;
+			productReference = 4DF961AA1665502E00FC0762 /* Chord TutorTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -339,7 +345,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Steven Lester";
 			};
-			buildConfigurationList = 4DF9617A1665502E00FC0762 /* Build configuration list for PBXProject "MusicTheoryTutor" */;
+			buildConfigurationList = 4DF9617A1665502E00FC0762 /* Build configuration list for PBXProject "Chord Tutor" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -351,8 +357,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DF9617F1665502E00FC0762 /* MusicTheoryTutor */,
-				4DF961A91665502E00FC0762 /* MusicTheoryTutorTests */,
+				4DF9617F1665502E00FC0762 /* Chord Tutor */,
+				4DF961A91665502E00FC0762 /* Chord TutorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +374,8 @@
 				4DF9619B1665502E00FC0762 /* Default-568h@2x.png in Resources */,
 				777D570E16A939F200ED085C /* CalloutView.png in Resources */,
 				7792938E16A9F5FF00DC0715 /* MainStoryboard.storyboard in Resources */,
+				77C0B71716E8E2ED006259A7 /* grandStaf_57x57.png in Resources */,
+				77C0B71916E8E2FF006259A7 /* grandStaff_114x114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +453,7 @@
 /* Begin PBXTargetDependency section */
 		4DF961B01665502E00FC0762 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4DF9617F1665502E00FC0762 /* MusicTheoryTutor */;
+			target = 4DF9617F1665502E00FC0762 /* Chord Tutor */;
 			targetProxy = 4DF961AF1665502E00FC0762 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -524,12 +532,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
+				GCC_PREFIX_HEADER = "MusicTheoryTutor/Chord Tutor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "MusicTheoryTutor/MusicTheoryTutor-Info.plist";
+				INFOPLIST_FILE = "MusicTheoryTutor/Chord Tutor-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Chord Tutor";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -538,12 +546,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
+				GCC_PREFIX_HEADER = "MusicTheoryTutor/Chord Tutor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "MusicTheoryTutor/MusicTheoryTutor-Info.plist";
+				INFOPLIST_FILE = "MusicTheoryTutor/Chord Tutor-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Chord Tutor";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -558,8 +566,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
-				INFOPLIST_FILE = "MusicTheoryTutorTests/MusicTheoryTutorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MusicTheoryTutorTests/Chord TutorTests-Info.plist";
+				PRODUCT_NAME = "Chord TutorTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -575,8 +583,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicTheoryTutor/MusicTheoryTutor-Prefix.pch";
-				INFOPLIST_FILE = "MusicTheoryTutorTests/MusicTheoryTutorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MusicTheoryTutorTests/Chord TutorTests-Info.plist";
+				PRODUCT_NAME = "Chord TutorTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -585,7 +593,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4DF9617A1665502E00FC0762 /* Build configuration list for PBXProject "MusicTheoryTutor" */ = {
+		4DF9617A1665502E00FC0762 /* Build configuration list for PBXProject "Chord Tutor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DF961BA1665502E00FC0762 /* Debug */,
@@ -594,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DF961BC1665502E00FC0762 /* Build configuration list for PBXNativeTarget "MusicTheoryTutor" */ = {
+		4DF961BC1665502E00FC0762 /* Build configuration list for PBXNativeTarget "Chord Tutor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DF961BD1665502E00FC0762 /* Debug */,
@@ -603,7 +611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DF961BF1665502E00FC0762 /* Build configuration list for PBXNativeTarget "MusicTheoryTutorTests" */ = {
+		4DF961BF1665502E00FC0762 /* Build configuration list for PBXNativeTarget "Chord TutorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DF961C01665502E00FC0762 /* Debug */,

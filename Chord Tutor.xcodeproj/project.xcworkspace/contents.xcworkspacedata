@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MusicTheoryTutor.xcodeproj">
+      location = "self:Chord Tutor.xcodeproj">
    </FileRef>
 </Workspace>

@@ -23,7 +23,7 @@
     UserInputButton *inputTile_4;
 }
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *modeButton;
 @property (strong, nonatomic) IBOutlet UIView *calloutView;
 @property (strong, nonatomic) IBOutlet UIButton *triadButton;
 @property (strong, nonatomic) IBOutlet UIButton *fourNoteChordButton;
@@ -40,10 +40,11 @@
 @property (nonatomic) NSMutableString *currentChordType;
 
 - (IBAction)getNewChord;
-- (IBAction)settingsButtonClicked;
+- (IBAction)modeButtonClicked;
 - (IBAction)handleModeChange:(id)sender;
 - (IBAction)handleUserInput:(UserInputButton *)sender;
 - (IBAction)submitClicked:(id)sender;
+- (IBAction)showAnswer:(id)sender;
 - (IBAction)setupInputTiles;
 - (void)resetTiles;
 

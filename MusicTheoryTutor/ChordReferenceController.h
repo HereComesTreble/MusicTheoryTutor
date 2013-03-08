@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface ChordReferenceController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     NSArray *tableviewarray;
@@ -31,9 +32,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *signature;
 @property (nonatomic, strong) IBOutlet UILabel *intervals;
 
-
+@property (strong, nonatomic) IBOutlet UITableView *displayedTableView;
 @property (nonatomic, retain) NSArray *tableviewarray;
-
-
 
 @end
