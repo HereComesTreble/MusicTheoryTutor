@@ -80,7 +80,7 @@
                                            Third:@"perfect 5th"
                                      intervalOne:0
                                      intervalTwo:2
-                                   intervalThree:6
+                                   intervalThree:7
                                              Num:3];
         
         Suspended4th = [[Chords alloc] initThree:@"Suspended 4th"
@@ -527,7 +527,7 @@
                                       intervalTwo:4
                                     intervalThree:5
                                      intervalFour:9
-                                     intervalFive:19
+                                     intervalFive:10
                                               num:5];
         
         MinorMajor9th = [[Chords alloc] initFive:@"Minor(Major) 9th"
