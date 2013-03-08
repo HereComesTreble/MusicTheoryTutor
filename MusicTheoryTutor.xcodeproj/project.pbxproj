@@ -266,26 +266,9 @@
 			children = (
 				4DF961B71665502E00FC0762 /* MusicTheoryTutorTests.h */,
 				4DF961B81665502E00FC0762 /* MusicTheoryTutorTests.m */,
-				BE64126516E2C0B400D26F42 /* Five_note_Chord_Major6add9_Minor6add9.h */,
-				BE64126616E2C0B400D26F42 /* Five_note_Chord_Major6add9_Minor6add9.m */,
-				BE64126816E2CFCF00D26F42 /* Five_note_Chord_DominantAdd9_DominantFlat5.h */,
-				BE64126916E2CFCF00D26F42 /* Five_note_Chord_DominantAdd9_DominantFlat5.m */,
-				BEFF0FA416E43CF4003D6F3D /* Five_note_Chord_Dominant9Augmented5_Minor9.h */,
-				BEFF0FA516E43CF4003D6F3D /* Five_note_Chord_Dominant9Augmented5_Minor9.m */,
-				BEFF0FA816E447B2003D6F3D /* Five_note_Chord_Minor9Flat5_Major9.h */,
-				BEFF0FA916E447B2003D6F3D /* Five_note_Chord_Minor9Flat5_Major9.m */,
-				BEFF0FAB16E4591C003D6F3D /* Five_note_Chord_Major9suspended4_Major7Flat9.h */,
-				BEFF0FAC16E4591D003D6F3D /* Five_note_Chord_Major9suspended4_Major7Flat9.m */,
-				BE02EAEA16E502320085352F /* Five_note_Chord_DominantAdd6_MinorMajor9.h */,
-				BE02EAEB16E502320085352F /* Five_note_Chord_DominantAdd6_MinorMajor9.m */,
-				BEFE8AFA16E911E00051EC48 /* Five_note_Chord_MinorMajorFlat9_DominantAddAug9.h */,
-				BEFE8AFB16E911E00051EC48 /* Five_note_Chord_MinorMajorFlat9_DominantAddAug9.m */,
-				BE837D6516E99FFE00DF876F /* Five_note_Chord_DominantFlat5Aug9_DominantAddFlat9.h */,
-				BE837D6616E99FFE00DF876F /* Five_note_Chord_DominantFlat5Aug9_DominantAddFlat9.m */,
-				BE837D6916E9AE4600DF876F /* Five_note_Chord_Minor7Flat9_Minor7Augmented.h */,
-				BE837D6A16E9AE4600DF876F /* Five_note_Chord_Minor7Flat9_Minor7Augmented.m */,
 				BEE9EEA616D699E200886C14 /* 3 note chords */,
 				BE64126316E2BAA700D26F42 /* 4 note chords */,
+				BE837D6C16E9BE5200DF876F /* 5 note chords */,
 				4DF961B21665502E00FC0762 /* Supporting Files */,
 			);
 			path = MusicTheoryTutorTests;
@@ -327,6 +310,31 @@
 				BE65685D16E07E5100B67D04 /* Four_note_Chord_minorFlat6_minor6.m */,
 			);
 			name = "4 note chords";
+			sourceTree = "<group>";
+		};
+		BE837D6C16E9BE5200DF876F /* 5 note chords */ = {
+			isa = PBXGroup;
+			children = (
+				BE64126516E2C0B400D26F42 /* Five_note_Chord_Major6add9_Minor6add9.h */,
+				BE64126616E2C0B400D26F42 /* Five_note_Chord_Major6add9_Minor6add9.m */,
+				BE64126816E2CFCF00D26F42 /* Five_note_Chord_DominantAdd9_DominantFlat5.h */,
+				BE64126916E2CFCF00D26F42 /* Five_note_Chord_DominantAdd9_DominantFlat5.m */,
+				BEFF0FA416E43CF4003D6F3D /* Five_note_Chord_Dominant9Augmented5_Minor9.h */,
+				BEFF0FA516E43CF4003D6F3D /* Five_note_Chord_Dominant9Augmented5_Minor9.m */,
+				BEFF0FA816E447B2003D6F3D /* Five_note_Chord_Minor9Flat5_Major9.h */,
+				BEFF0FA916E447B2003D6F3D /* Five_note_Chord_Minor9Flat5_Major9.m */,
+				BEFF0FAB16E4591C003D6F3D /* Five_note_Chord_Major9suspended4_Major7Flat9.h */,
+				BEFF0FAC16E4591D003D6F3D /* Five_note_Chord_Major9suspended4_Major7Flat9.m */,
+				BE02EAEA16E502320085352F /* Five_note_Chord_DominantAdd6_MinorMajor9.h */,
+				BE02EAEB16E502320085352F /* Five_note_Chord_DominantAdd6_MinorMajor9.m */,
+				BEFE8AFA16E911E00051EC48 /* Five_note_Chord_MinorMajorFlat9_DominantAddAug9.h */,
+				BEFE8AFB16E911E00051EC48 /* Five_note_Chord_MinorMajorFlat9_DominantAddAug9.m */,
+				BE837D6516E99FFE00DF876F /* Five_note_Chord_DominantFlat5Aug9_DominantAddFlat9.h */,
+				BE837D6616E99FFE00DF876F /* Five_note_Chord_DominantFlat5Aug9_DominantAddFlat9.m */,
+				BE837D6916E9AE4600DF876F /* Five_note_Chord_Minor7Flat9_Minor7Augmented.h */,
+				BE837D6A16E9AE4600DF876F /* Five_note_Chord_Minor7Flat9_Minor7Augmented.m */,
+			);
+			name = "5 note chords";
 			sourceTree = "<group>";
 		};
 		BEE9EEA616D699E200886C14 /* 3 note chords */ = {
