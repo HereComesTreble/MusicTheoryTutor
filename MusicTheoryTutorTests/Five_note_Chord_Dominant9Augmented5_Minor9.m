@@ -1,30 +1,30 @@
 //
-//  Four_note_Chord_Major7_suspended_2_4.m
+//  Five_note_Chord_Dominant9Augmented5_Minor9.m
 //  MusicTheoryTutor
 //
-//  Created by Chelsea  Brzezinski on 2/21/13.
+//  Created by Chelsea  Brzezinski on 3/3/13.
 //  Copyright (c) 2013 Steven Lester. All rights reserved.
 //
 
-#import "Four_note_Chord_Major7_suspended_2_4.h"
+#import "Five_note_Chord_Dominant9Augmented5_Minor9.h"
 #import "ChordDictionary.h"
 #import "Chords.h"
 #import "MusicTheoryTutorTests.h"
 
-@implementation Four_note_Chord_Major7_suspended_2_4
+@implementation Five_note_Chord_Dominant9Augmented5_Minor9
 
--(void)test_4note_Major7Suspended2Chords
+-(void)test_5note_Dominant9aug5Chords
 {
-    //A Major 7 suspended 4: A-B-E-G♯
+    //A Dominant add 9: A-C♯-E♯-G-B
     ChordDictionary *chordDictionary = [ChordDictionary new];
     NSMutableString * chordRoot = [NSMutableString stringWithString: @"A"];
-    NSMutableString * chordType = [NSMutableString stringWithString: @"M7sus2"];
-    //Major 7 suspended 2: M7sus2
+    NSMutableString * chordType = [NSMutableString stringWithString: @"9♯5"];
+    //Dominant 9 Augmented 5 - 9♯5
     NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     
     int index =0;
     bool correctAns=YES;
-    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A", @"B", @"E", @"G♯", nil];
+    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A", @"C♯", @"E♯", @"G",@"B", nil];
     
     while (index < [attempt count] && correctAns)
     {
@@ -35,16 +35,16 @@
     if(!correctAns)//correctAnws=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed A Major 7 suspended 2: A-B-E-G♯");
+        STFail(@"Failed A Dominant add 9: A-C♯-E♯-G-B");
     }
     
     
-    //B Major 7 suspended 2: B-C♯-F♯-A♯
+    //B Dominant add 9: B-D♯-Fx-A-C♯
     chordRoot=[NSMutableString stringWithString: @"B"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"B", @"C♯", @"F♯", @"A♯", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"B", @"D♯", @"Fx", @"A",@"C♯", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -54,16 +54,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed B Major 7 suspended 2: B-C♯-F♯-A♯");
+        STFail(@"Failed B Dominant add 9: B-D♯-Fx-A-C♯");
     }
     
     
-    //C Major 7 suspended 2: C-D-G-B
+    //C Dominant add 9: C-E-G♯-B♭-D
     chordRoot=[NSMutableString stringWithString: @"C"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"C", @"D", @"G", @"B", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"C", @"E", @"G♯", @"B♭",@"D", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -73,16 +73,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed C Major 7 suspended 2: C-D-G-B");
+        STFail(@"Failed C Dominant add 9: C-E-G♯-B♭-D");
     }
     
     
-    //D Major 7 suspended 2: D-E-A-C♯
+    //D Dominant add 9: D-F♯-A♯-C-E
     chordRoot=[NSMutableString stringWithString: @"D"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"D", @"E", @"A", @"C♯", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"D", @"F♯", @"A♯", @"C",@"E", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -92,16 +92,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed D Major 7 suspended 2: D-E-A-C♯");
+        STFail(@"Failed D Dominant add 9: D-F♯-A♯-C-E");
     }
     
     
-    //E Major 7 suspended 2: E-F♯-B-D♯
+    //E Dominant add 9: E-G♯-B♯-D-F♯
     chordRoot=[NSMutableString stringWithString: @"E"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"E", @"F♯", @"B", @"D♯", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"E", @"G♯", @"B♯", @"D",@"F♯", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -111,16 +111,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed E Major 7 suspended 2: E-F♯-B-D♯");
+        STFail(@"Failed E Dominant add 9: E-G♯-B♯-D-F♯");
     }
     
     
-    //F Major 7 suspended 2: F-G-C-E
+    //F Dominant add 9: F-A-C♯-D-G
     chordRoot=[NSMutableString stringWithString: @"F"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"F", @"G", @"C", @"E", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"F", @"A", @"C♯", @"D",@"G", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -130,16 +130,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed F Major 7 suspended 2: F-G-C-E");
+        STFail(@"Failed F Dominant add 9: F-A-C♯-D-G");
     }
     
     
-    //G Major 7 suspended 2: G-A-D-F♯
+    //G Dominant add 9: G-B-D♯-E-A
     chordRoot=[NSMutableString stringWithString: @"G"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"G", @"A", @"D", @"F♯", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"G", @"B", @"D♯", @"E",@"A", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -149,22 +149,22 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed G Major 7 suspended 2: G-A-D-F♯");
+        STFail(@"Failed G Dominant add 9: G-B-D♯-E-A");
     }
 }
 
--(void)test_4noteFlat_Major7Suspended2Chords
+-(void)test_5noteFlat_Dominant9aug5Chords
 {
-    //A♭ Major 7 suspended 4: A♭-B♭-E♭-G
+    //A♭ Dominant add 9: A♭-C-E-G♭-B♭
     ChordDictionary *chordDictionary = [ChordDictionary new];
     NSMutableString * chordRoot = [NSMutableString stringWithString: @"A♭"];
-    NSMutableString * chordType = [NSMutableString stringWithString: @"M7sus2"];
-    //Major 7 suspended 2: M7sus2
+    NSMutableString * chordType = [NSMutableString stringWithString: @"9♯5"];
+    //Dominant 9 Augmented 5 - 9♯5
     NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     
     int index =0;
     bool correctAns=YES;
-    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♭", @"B♭", @"E♭", @"G", nil];
+    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♭", @"C", @"E", @"G♭",@"B♭", nil];
     
     while (index < [attempt count] && correctAns)
     {
@@ -175,297 +175,16 @@
     if(!correctAns)//correctAnws=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed A♭ Major 7 suspended 2: A♭-B♭-E♭-G");
+        STFail(@"Failed A♭ Dominant add 9: A♭-C-E-G♭-B♭");
     }
     
     
-    //B♭ Major 7 suspended 2: B♭-C-F-A
-    chordRoot=[NSMutableString stringWithString: @"B♭"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"B♭", @"C", @"F", @"A", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed B♭ Major 7 suspended 2: B♭-C-F-A");
-    }
-    
-    
-    //C♭ Major 7 suspended 2: C♭-D♭-G♭-B♭
-    chordRoot=[NSMutableString stringWithString: @"C♭"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"C♭", @"D♭", @"G♭", @"B♭", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed C♭ Major 7 suspended 2: C♭-D♭-G♭-B♭");
-    }
-    
-    
-    //D♭ Major 7 suspended 2: D♭-E♭-A♭-C
-    chordRoot=[NSMutableString stringWithString: @"D♭"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"D♭", @"E♭", @"A♭", @"C", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed D♭ Major 7 suspended 2: D♭-E♭-A♭-C");
-    }
-    
-    
-    //E♭ Major 7 suspended 2: E♭-F-B♭-D
-    chordRoot=[NSMutableString stringWithString: @"E♭"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"E♭", @"F", @"B♭", @"D", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed E♭ Major 7 suspended 2: E♭-F-B♭-D");
-    }
-    
-    
-    //F♭ Major 7 suspended 2: F♭-G♭-C♭-E♭
-    chordRoot=[NSMutableString stringWithString: @"F♭"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"F♭", @"G♭", @"C♭", @"E♭", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed F♭ Major 7 suspended 2: F♭-G♭-C♭-E♭");
-    }
-    
-    
-    //G♭ Major 7 suspended 2: G♭-A♭-D♭-F
-    chordRoot=[NSMutableString stringWithString: @"G♭"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"G♭", @"A♭", @"D♭", @"F", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed G♭ Major 7 suspended 2: G♭-A♭-D♭-F");
-    }
-}
-
--(void)test_4noteSharp_Major7Suspended2Chords
-{
-    //A♯ Major 7 suspended 4: A♯-B♯-E♯-Gx
-    ChordDictionary *chordDictionary = [ChordDictionary new];
-    NSMutableString * chordRoot = [NSMutableString stringWithString: @"A♯"];
-    NSMutableString * chordType = [NSMutableString stringWithString: @"M7sus2"];
-    //Major 7 suspended 2: M7sus2
-    NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    
-    int index =0;
-    bool correctAns=YES;
-    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♯", @"B♯", @"E♯", @"Gx", nil];
-    
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//correctAnws=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed A♯ Major 7 suspended 2: A♯-B♯-E♯-Gx");
-    }
-    
-    
-    //B♯ Major 7 suspended 2: B♯-Cx-Fx-Ax
-    chordRoot=[NSMutableString stringWithString: @"B♯"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"B♯", @"Cx", @"Fx", @"Ax", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed B♯ Major 7 suspended 2: B♯-Cx-Fx-Ax");
-    }
-    
-    
-    //C♯ Major 7 suspended 2: C♯-D♯-G♯-B♯
-    chordRoot=[NSMutableString stringWithString: @"C♯"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"C♯", @"D♯", @"G♯", @"B♯", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed C♯ Major 7 suspended 2: C♯-D♯-G♯-B♯");
-    }
-    
-    
-    //D♯ Major 7 suspended 2: D♯-E♯-A♯-Cx
-    chordRoot=[NSMutableString stringWithString: @"D♯"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"D♯", @"E♯", @"A♯", @"Cx", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed D♯ Major 7 suspended 2: D♯-E♯-A♯-Cx");
-    }
-    
-    
-    //E♯ Major 7 suspended 2: E♯-Fx-B♯-Dx
-    chordRoot=[NSMutableString stringWithString: @"E♯"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"E♯", @"Fx", @"B♯", @"Dx", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed E♯ Major 7 suspended 2: E♯-Fx-B♯-Dx");
-    }
-    
-    
-    //F♯ Major 7 suspended 2: F♯-G♯-C♯-E♯
-    chordRoot=[NSMutableString stringWithString: @"F♯"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"F♯", @"G♯", @"C♯", @"E♯", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed F♯ Major 7 suspended 2: F♯-G♯-C♯-E♯");
-    }
-    
-    
-    //G♯ Major 7 suspended 2: G♯-A♯-D♯-Fx
-    chordRoot=[NSMutableString stringWithString: @"G♯"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"G♯", @"A♯", @"D♯", @"Fx", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed G♯ Major 7 suspended 2: G♯-A♯-D♯-Fx");
-    }
-}
-
-
--(void)test_4note_Major7Suspended4Chords
-{
-    //A Major 7 suspended 4: A-Cx-E-G♯
-    ChordDictionary *chordDictionary = [ChordDictionary new];
-    NSMutableString * chordRoot = [NSMutableString stringWithString: @"A"];
-    NSMutableString * chordType = [NSMutableString stringWithString: @"M7sus4"];
-    //Major 7 suspended 4: M7sus4
-    NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    
-    int index =0;
-    bool correctAns=YES;
-    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A", @"Cx", @"E", @"G♯", nil];
-    
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//correctAnws=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed A Major 7 suspended 4: A-Cx-E-G♯");
-    }
-    
-    
-    //B Major 7 suspended 4: B-Dx-F♯-A♯
+    //B♭ Dominant add 9: B♭-D-F♯-A♭-C
     chordRoot=[NSMutableString stringWithString: @"B"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"B", @"Dx", @"F♯", @"A♯", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"B♭", @"D", @"F♯", @"A♭",@"C", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -475,156 +194,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed B Major 7 suspended 4: B-Dx-F♯-A♯");
+        STFail(@"Failed B♭ Dominant add 9: B♭-D-F♯-A♭-C");
     }
     
     
-    //C Major 7 suspended 4: C-E♯-G-B
-    chordRoot=[NSMutableString stringWithString: @"C"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"C", @"E♯", @"G", @"B", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed C Major 7 suspended 4: C-E♯-G-B");
-    }
-    
-    
-    //D Major 7 suspended 4: D-Fx-A-C♯
-    chordRoot=[NSMutableString stringWithString: @"D"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"D", @"Fx", @"A", @"C♯", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed D Major 7 suspended 4: D-Fx-A-C♯");
-    }
-    
-    
-    //E Major 7 suspended 4: E-Gx-B-D♯
-    chordRoot=[NSMutableString stringWithString: @"E"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"E", @"Gx", @"B", @"D♯", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed E Major 7 suspended 4: E-Gx-B-D♯");
-    }
-    
-    
-    //F Major 7 suspended 4: F-A♯-C-E
-    chordRoot=[NSMutableString stringWithString: @"F"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"F", @"A♯", @"C", @"E", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed F Major 7 suspended 4: F-A♯-C-E");
-    }
-    
-    
-    //G Major 7 suspended 4: G-B♯-D-F♯
-    chordRoot=[NSMutableString stringWithString: @"G"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"G", @"B♯", @"D", @"F♯", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed G Major 7 suspended 4: G-B♯-D-F♯");
-    }
-}
-
--(void)test_4noteFlat_Major7Suspended4Chords
-{
-    //A♭ Major 7 suspended 4: A♭-C♯-E♭-G
-    ChordDictionary *chordDictionary = [ChordDictionary new];
-    NSMutableString * chordRoot = [NSMutableString stringWithString: @"A♭"];
-    NSMutableString * chordType = [NSMutableString stringWithString: @"M7sus4"];
-    //Major 7 suspended 4th: M7sus4
-    NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    
-    int index =0;
-    bool correctAns=YES;
-    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♭", @"C♯", @"E♭", @"G", nil];
-    
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//correctAnws=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed A♭ Major 7 suspended 4: A♭-C♯-E♭-G");
-    }
-    
-    
-    //B♭ Major 7 suspended 4: B♭-D♯-F-A
-    chordRoot=[NSMutableString stringWithString: @"B♭"];
-    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
-    index=0;
-    correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"B♭", @"D♯", @"F", @"A", nil];
-    while (index < [attempt count] && correctAns)
-    {
-        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
-        index++;
-    }
-    
-    if(!correctAns)//attempt=false, did not match keyAnswer
-    {
-        NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed B♭ Major 7 suspended 4: B♭-D♯-F-A");
-    }
-    
-    
-    //C♭ Major 7 suspended 4: C♭-E-G♭-B♭
+    //C♭ Dominant add 9: C♭-E♭-G-B♭♭-D♭
     chordRoot=[NSMutableString stringWithString: @"C♭"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"C♭", @"E", @"G♭", @"B♭", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"C♭", @"E♭", @"G", @"B♭♭",@"D♭", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -634,16 +213,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed C♭ Major 7 suspended 4: C♭-E-G♭-B♭");
+        STFail(@"Failed C♭ Dominant add 9: C♭-E♭-G-B♭♭-D♭");
     }
     
     
-    //D♭ Major 7 suspended 4: D♭-F♯-A♭-C
+    //D♭ Dominant add 9: D♭-F-A-C♭-E♭
     chordRoot=[NSMutableString stringWithString: @"D♭"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"D♭", @"F♯", @"A♭", @"C", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"D♭", @"F", @"A", @"C♭",@"E♭", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -653,16 +232,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed D♭ Major 7 suspended 4: D♭-F♯-A♭-C");
+        STFail(@"Failed D♭ Dominant add 9: D♭-F-A-C♭-E♭");
     }
     
     
-    //E♭ Major 7 suspended 4: E♭-G♯-B♭-D
+    //E♭ Dominant add 9: E♭-G-B-D♭-F
     chordRoot=[NSMutableString stringWithString: @"E♭"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"E♭", @"G♯", @"B♭", @"D", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"E♭", @"G", @"B", @"D♭",@"F", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -672,16 +251,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed E♭ Major 7 suspended 4: E♭-G♯-B♭-D");
+        STFail(@"Failed E♭ Dominant add 9: E♭-G-B-D♭-F");
     }
     
     
-    //F♭ Major 7 suspended 4: F♭-A-C♭-E♭
+    //F♭ Dominant add 9: F♭-A♭-C-D♭-G♭
     chordRoot=[NSMutableString stringWithString: @"F♭"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"F♭", @"A", @"C♭", @"E♭", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"F♭", @"A♭", @"C", @"D♭",@"G♭", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -691,16 +270,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed F♭ Major 7 suspended 4: F♭-A-C♭-E♭");
+        STFail(@"Failed F♭ Dominant add 9: F♭-A♭-C-D♭-G♭");
     }
     
     
-    //G♭ Major 7 suspended 4: G♭-B-D♭-F
+    //G♭ Dominant add 9: G♭-B♭-D-E♭-A♭
     chordRoot=[NSMutableString stringWithString: @"G♭"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"G♭", @"B", @"D♭", @"F", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"G♭", @"B♭", @"D", @"E♭",@"A♭", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -710,22 +289,22 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed G♭ Major 7 suspended 4: G♭-B-D♭-F");
+        STFail(@"Failed G♭ Dominant add 9: G♭-B♭-D-E♭-A♭");
     }
 }
 
--(void)test_4noteSharp_Major7Suspended4Chords
+-(void)test_5noteSharp_Dominant9aug5Chords
 {
-    //A♯ Major 7 suspended 4: A♯-C♯♯♯-E♯-Gx
+    //A♯ Dominant add 9: A♯-Cx-Ex-G♯-B♯
     ChordDictionary *chordDictionary = [ChordDictionary new];
     NSMutableString * chordRoot = [NSMutableString stringWithString: @"A♯"];
-    NSMutableString * chordType = [NSMutableString stringWithString: @"M7sus4"];
-    //Major 4 suspended 4nd: M7sus4
+    NSMutableString * chordType = [NSMutableString stringWithString: @"9♯5"];
+    //Dominant 9 Augmented 5 - 9♯5
     NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     
     int index =0;
     bool correctAns=YES;
-    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♯", @"C♯♯♯", @"E♯", @"Gx", nil];
+    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♯", @"Cx", @"Ex", @"G♯",@"B♯", nil];
     
     while (index < [attempt count] && correctAns)
     {
@@ -736,16 +315,16 @@
     if(!correctAns)//correctAnws=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed A♯ Major 7 suspended 4: A♯-C♯♯♯-E♯-Gx");
+        STFail(@"Failed A Dominant add 9: A♯-Cx-Ex-G♯-B♯");
     }
     
     
-    //B♯ Major 7 suspended 4: B♯-D♯♯♯-Fx-Ax
+    //B♯ Dominant add 9: B♯-Dx-F♯♯♯-A♯-Cx
     chordRoot=[NSMutableString stringWithString: @"B♯"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"B♯", @"D♯♯♯", @"Fx", @"Ax", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"B♯", @"Dx", @"F♯♯♯", @"A♯",@"Cx", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -755,16 +334,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed B♯ Major 7 suspended 4: B♯-D♯♯♯-Fx-Ax");
+        STFail(@"Failed B♯ Dominant add 9: B♯-Dx-F♯♯♯-A♯-Cx");
     }
     
     
-    //C♯ Major 7 suspended 4: C♯-Ex-G♯-B♯
+    //C♯ Dominant add 9: C♯-E♯-Gx-B-D♯
     chordRoot=[NSMutableString stringWithString: @"C♯"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"C♯", @"Ex", @"G♯", @"B♯", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"C♯", @"E♯", @"Gx", @"B",@"D♯", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -774,16 +353,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed C♯ Major 7 suspended 4: C♯-Ex-G♯-B♯");
+        STFail(@"Failed C♯ Dominant add 9: C♯-E♯-Gx-B-D♯");
     }
     
     
-    //D♯ Major 7 suspended 4: D♯-F♯♯♯-A♯-Cx
+    //D♯ Dominant add 9: D♯-Fx-Ax-C♯-E♯
     chordRoot=[NSMutableString stringWithString: @"D♯"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"D♯", @"F♯♯♯", @"A♯", @"Cx", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"D♯", @"Fx", @"Ax", @"C♯",@"E♯", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -793,16 +372,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed D♯ Major 7 suspended 4: D♯-F♯♯♯-A♯-Cx");
+        STFail(@"Failed D♯ Dominant add 9: D♯-Fx-Ax-C♯-E♯");
     }
     
     
-    //E♯ Major 7 suspended 4: E♯-G♯♯♯-B♯-Dx
+    //E♯ Dominant add 9: E♯-Gx-Bx-D♯-Fx
     chordRoot=[NSMutableString stringWithString: @"E♯"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"E♯", @"G♯♯♯", @"B♯", @"Dx", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"E♯", @"Gx", @"Bx", @"D♯",@"Fx", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -812,16 +391,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed E♯ Major 7 suspended 4: E♯-G♯♯♯-B♯-Dx");
+        STFail(@"Failed E♯ Dominant add 9: E♯-Gx-Bx-D♯-Fx");
     }
     
     
-    //F♯ Major 7 suspended 4: F♯-Ax-C♯-E♯
+    //F♯ Dominant add 9: F♯-A♯-Cx-D♯-G♯
     chordRoot=[NSMutableString stringWithString: @"F♯"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"F♯", @"Ax", @"C♯", @"E♯", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"F♯", @"A♯", @"Cx", @"D♯",@"G♯", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -831,16 +410,16 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed F♯ Major 7 suspended 4: F♯-Ax-C♯-E♯");
+        STFail(@"Failed F♯ Dominant add 9: F♯-A♯-Cx-D♯-G♯");
     }
     
     
-    //G♯ Major 7 suspended 4: G♯-Bx-D♯-Fx
+    //G♯ Dominant add 9: G♯-B♯-Dx-E♯-A♯
     chordRoot=[NSMutableString stringWithString: @"G♯"];
     attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
     index=0;
     correctAns=YES;
-    keyAnswer = [NSArray arrayWithObjects:@"G♯", @"Bx", @"D♯", @"Fx", nil];
+    keyAnswer = [NSArray arrayWithObjects:@"G♯", @"B♯", @"Dx", @"E♯",@"A♯", nil];
     while (index < [attempt count] && correctAns)
     {
         correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
@@ -850,9 +429,428 @@
     if(!correctAns)//attempt=false, did not match keyAnswer
     {
         NSLog(@"Attempted answer: %@", [attempt description]);
-        STFail(@"Failed G♯ Major 7 suspended 4: G♯-Bx-D♯-Fx");
+        STFail(@"Failed G♯ Dominant add 9: G♯-B♯-Dx-E♯-A♯");
     }
+}
 
+-(void)test_5note_Minor9Chords
+{
+    //A Minor 9: A-C-E-G-B
+    ChordDictionary *chordDictionary = [ChordDictionary new];
+    NSMutableString * chordRoot = [NSMutableString stringWithString: @"A"];
+    NSMutableString * chordType = [NSMutableString stringWithString: @"m9"];
+    //Minor 9 - m9
+    NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    
+    int index =0;
+    bool correctAns=YES;
+    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A", @"C", @"E", @"G",@"B", nil];
+    
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//correctAnws=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed A Minor 9: A-C-E-G-B");
+    }
+    
+    
+    //B Minor 9: B-D-F♯-A-C♯
+    chordRoot=[NSMutableString stringWithString: @"B"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"B", @"D", @"F♯", @"A",@"C♯", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed B Minor 9: B-D-F♯-A-C♯");
+    }
+    
+    
+    //C Minor 9: C-E♭-G-B♭-D
+    chordRoot=[NSMutableString stringWithString: @"C"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"C", @"E♭", @"G", @"B♭",@"D", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed C Minor 9: C-E♭-G-B♭-D");
+    }
+    
+    
+    //D Minor 9: D-F-A-C-E
+    chordRoot=[NSMutableString stringWithString: @"D"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"D", @"F", @"A", @"C",@"E", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed D Minor 9: D-F-A-C-E");
+    }
+    
+    
+    //E Minor 9: E-G-B-D-F♯
+    chordRoot=[NSMutableString stringWithString: @"E"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"E", @"G", @"B", @"D",@"F♯", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed E Minor 9: E-G-B-D-F♯");
+    }
+    
+    
+    //F Minor 9: F-A♭-C-E♭-G
+    chordRoot=[NSMutableString stringWithString: @"F"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"F", @"A♭", @"C", @"E♭", @"G", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed F Minor 9: F-A♭-C-E♭-G");
+    }
+    
+    
+    //G Minor 9: G-B♭-D-F-A
+    chordRoot=[NSMutableString stringWithString: @"G"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"G", @"B♭", @"D", @"F", @"A", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed G Minor 9: G-B♭-D-F-A");
+    }
+}
+
+-(void)test_5noteFlat_Minor9Chords
+{
+    //A♭ Minor 9: A♭-C♭-E♭-G♭-B♭
+    ChordDictionary *chordDictionary = [ChordDictionary new];
+    NSMutableString * chordRoot = [NSMutableString stringWithString: @"A♭"];
+    NSMutableString * chordType = [NSMutableString stringWithString: @"m9"];
+    //Minor 9 - m9
+    NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    
+    int index =0;
+    bool correctAns=YES;
+    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♭", @"C♭", @"E♭", @"G♭",@"B♭", nil];
+    
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//correctAnws=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed A♭ Minor 9: A♭-C♭-E♭-G♭-B♭");
+    }
+    
+    
+    //B♭ Minor 9: B♭-D♭-F-A♭-C
+    chordRoot=[NSMutableString stringWithString: @"B♭"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"B♭", @"D♭", @"F", @"A♭",@"C", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed B♭ Minor 9: B♭-D♭-F-A♭-C");
+    }
+    
+    
+    //C♭ Minor 9: C♭-E♭♭-G♭-B♭♭-D♭
+    chordRoot=[NSMutableString stringWithString: @"C♭"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"C♭", @"E♭♭", @"G♭", @"B♭♭",@"D♭", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed C♭ Minor 9: C♭-E♭♭-G♭-B♭♭-D♭");
+    }
+    
+    
+    //D♭ Minor 9: D♭-F♭-A♭-C♭-E♭
+    chordRoot=[NSMutableString stringWithString: @"D♭"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"D♭", @"F♭", @"A♭", @"C♭",@"E♭", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed D♭ Minor 9: D♭-F♭-A♭-C♭-E♭");
+    }
+    
+    
+    //E♭ Minor 9: E♭-G♭-B♭-D♭-F
+    chordRoot=[NSMutableString stringWithString: @"E♭"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"E♭", @"G♭", @"B♭", @"D♭",@"F", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed E♭ Minor 9: E♭-G♭-B♭-D♭-F");
+    }
+    
+    
+    //F♭ Minor 9: F♭-A♭♭-C♭-E♭♭-G♭
+    chordRoot=[NSMutableString stringWithString: @"F♭"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"F♭", @"A♭♭", @"C♭", @"E♭♭", @"G♭", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed F♭ Minor 9: F♭-A♭♭-C♭-E♭♭-G♭");
+    }
+    
+    
+    //G♭ Minor 9: G♭-B♭♭-D♭-F♭-A♭
+    chordRoot=[NSMutableString stringWithString: @"G♭"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"G♭", @"B♭♭", @"D♭", @"F♭", @"A♭", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed G♭ Minor 9: G♭-B♭♭-D♭-F♭-A♭");
+    }
+}
+
+-(void)test_5noteSharp_Minor9Chords
+{
+    //A♯ Minor 9: A♯-C♯-E♯-G♯-B♯
+    ChordDictionary *chordDictionary = [ChordDictionary new];
+    NSMutableString * chordRoot = [NSMutableString stringWithString: @"A♯"];
+    NSMutableString * chordType = [NSMutableString stringWithString: @"m9"];
+    //Minor 9 - m9
+    NSArray * attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    
+    int index =0;
+    bool correctAns=YES;
+    NSArray * keyAnswer = [NSArray arrayWithObjects:@"A♯", @"C♯", @"E♯", @"G♯",@"B♯", nil];
+    
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//correctAnws=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed A♯ Minor 9: A♯-C♯-E♯-G♯-B♯");
+    }
+    
+    
+    //B♯ Minor 9: B♯-D♯-Fx-A♯-Cx
+    chordRoot=[NSMutableString stringWithString: @"B♯"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"B♯", @"D♯", @"Fx", @"A♯",@"Cx", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed B♯ Minor 9: B♯-D♯-Fx-A♯-Cx");
+    }
+    
+    
+    //C♯ Minor 9: C♯-E-G♯-B-D♯
+    chordRoot=[NSMutableString stringWithString: @"C♯"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"C♯", @"E", @"G♯", @"B",@"D♯", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed C♯ Minor 9: C♯-E-G♯-B-D♯");
+    }
+    
+    
+    //D♯ Minor 9: D♯-F♯-A♯-C♯-E♯
+    chordRoot=[NSMutableString stringWithString: @"D♯"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"D♯", @"F♯", @"A♯", @"C♯",@"E♯♯", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed D♯ Minor 9: D♯-F♯-A♯-C♯-E♯");
+    }
+    
+    
+    //E♯ Minor 9: E♯-G♯-B♯-D♯-Fx
+    chordRoot=[NSMutableString stringWithString: @"E♯"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"E♯", @"G♯", @"B♯", @"D♯",@"Fx", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed E♯ Minor 9: E♯-G♯-B♯-D♯-Fx");
+    }
+    
+    
+    //F♯ Minor 9: F♯-A-C♯-E-G♯
+    chordRoot=[NSMutableString stringWithString: @"F♯"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"F♯", @"A", @"C♯", @"E", @"G♯", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed F♯ Minor 9: F♯-A-C♯-E-G♯");
+    }
+    
+    
+    //G♯ Minor 9: G♯-B-D♯-F♯-A♯
+    chordRoot=[NSMutableString stringWithString: @"G♯"];
+    attempt= [chordDictionary getNotes:chordRoot chordType:chordType];
+    index=0;
+    correctAns=YES;
+    keyAnswer = [NSArray arrayWithObjects:@"G♯", @"B", @"D♯", @"F♯", @"A♯", nil];
+    while (index < [attempt count] && correctAns)
+    {
+        correctAns = [[attempt objectAtIndex:index] isEqualToString:[keyAnswer objectAtIndex:index]];
+        index++;
+    }
+    
+    if(!correctAns)//attempt=false, did not match keyAnswer
+    {
+        NSLog(@"Attempted answer: %@", [attempt description]);
+        STFail(@"Failed G♯ Minor 9: G♯-B-D♯-F♯-A♯");
+    }
 }
 
 @end

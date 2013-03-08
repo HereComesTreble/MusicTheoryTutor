@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DF9617F1665502E00FC0762"
-               BuildableName = "MusicTheoryTutor.app"
+               BuildableName = "Chord Tutor.app"
                BlueprintName = "Chord Tutor"
                ReferencedContainer = "container:Chord Tutor.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DF961A91665502E00FC0762"
-               BuildableName = "MusicTheoryTutorTests.octest"
+               BuildableName = "Chord TutorTests.octest"
                BlueprintName = "Chord TutorTests"
                ReferencedContainer = "container:Chord Tutor.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DF9617F1665502E00FC0762"
-            BuildableName = "MusicTheoryTutor.app"
+            BuildableName = "Chord Tutor.app"
             BlueprintName = "Chord Tutor"
             ReferencedContainer = "container:Chord Tutor.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DF9617F1665502E00FC0762"
-            BuildableName = "MusicTheoryTutor.app"
+            BuildableName = "Chord Tutor.app"
             BlueprintName = "Chord Tutor"
             ReferencedContainer = "container:Chord Tutor.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DF9617F1665502E00FC0762"
-            BuildableName = "MusicTheoryTutor.app"
+            BuildableName = "Chord Tutor.app"
             BlueprintName = "Chord Tutor"
             ReferencedContainer = "container:Chord Tutor.xcodeproj">
          </BuildableReference>
